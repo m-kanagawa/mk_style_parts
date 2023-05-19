@@ -35,12 +35,12 @@ const srcPath = {
 
 // 出力先パス
 const destPath = {
- css: 'dist/assets/css/',
- js: 'dist/assets/js/',
- img: 'dist/assets/img/',
-//  html: 'dist/',
-//  php: 'dist/',
- ejs: 'dist/'
+ css: 'docs/assets/css/',
+ js: 'docs/assets/js/',
+ img: 'docs/assets/img/',
+//  html: 'docs/',
+//  php: 'docs/',
+ ejs: 'docs/'
 }
 
 // copyFiles
@@ -107,7 +107,7 @@ const browserSyncFunc = () => {
 }
 const browserSyncOption = {
   server: {baseDir: "./"},       // 基準とするディレクトリを指定
-  startPath: "dist/index.html",  // 開きたいパス
+  startPath: "docs/index.html",  // 開きたいパス
   notify: false,                 // ブラウザ更新時に出てくる通知を非表示にする
   open: "external",              // ローカルIPアドレスでサーバを立ち上げる
 }
