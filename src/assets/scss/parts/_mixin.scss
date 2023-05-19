@@ -2,20 +2,6 @@
 // mixin
 // ===================================================================
 @use "sass:math";//Dart Sassで除算を使う際に必要な記述
-//-- フォントサイズ
-//-- くの字矢印
-//-- グラデーション
-//-- formスタイルリセット
-
-
-
-// @function clampVw($min, $size, $max, $vp: 1920) {
-//   $min: $min * 0.1rem;
-//   $max: $max * 0.1rem;
-//   $num: 100 / $vp * 1vw;
-//   $size_vw: $num * $size;
-//   @return clamp($min, $size_vw, $max);
-// }
 
 
 // フォントサイズ

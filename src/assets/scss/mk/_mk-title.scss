@@ -7,12 +7,9 @@
 	box-shadow: 0px 0px 0 10px #6ebbb4;
 	border: 1px solid #fff;
 	color: #fff;
-	font-size: 17px;
+	@include clamp_fontsize(14, 320, 992, 28);
 	letter-spacing: 1px;
 	text-align: center;
-	@media (min-width: 490px) {
-		font-size: 28px;
-	}
 }
 
 .mk-title02 {
@@ -24,24 +21,21 @@
 	box-shadow: 0px 0px 0 10px #6ebbb4;
 	border: 1px solid #fff;
 	color: #fff;
-	font-size: 17px;
+	@include clamp_fontsize(14, 320, 992, 28);
 	letter-spacing: 1px;
 	text-align: center;
 	&::after {
 		position: absolute;
-		bottom: -29px;
+		bottom: clamp(-30px,-7.8vw,30px);
 		left: 0;
 		right: 0;
 		width: 0;
 		height: 0;
 		content: '';
 		margin: auto;
-		border-width: 30px 30px 0 30px;
+		border-width: min(6vw,32px) min(6vw,32px) 0 min(6vw,32px);
 		border-style: solid;
 		border-color: #6ebbb4 transparent transparent transparent;
-	}
-	@media (min-width: 490px) {
-		font-size: 28px;
 	}
 }
 
@@ -52,18 +46,19 @@
 	margin-bottom: 3em;
 	background-color: #5caf73;
 	color: #fff;
-	font-size:min(6vw,36px);
+	@include clamp_fontsize(16, 320, 992, 28);
 	text-align: center;
 	&::after {
 		position: absolute;
-		bottom: -29px;
+		// bottom: min(-2vw,30px);
+		bottom: clamp(-30px,-2.8vw,30px);
 		left: 0;
 		right: 0;
 		width: 0;
 		height: 0;
 		content: '';
 		margin: auto;
-		border-width: 30px 30px 0 30px;
+		border-width: min(3vw,32px) min(3vw,32px) 0 min(3vw,32px);
 		border-style: solid;
 		border-color: #5caf73 transparent transparent transparent;
 	}
