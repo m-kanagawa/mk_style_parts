@@ -1,0 +1,260 @@
+/* 共通
+----------------------------------------------------*/
+
+html {
+  overflow-y: scroll;
+  font-size:62.5%;
+}
+
+body {
+  overflow: hidden;
+	color: var(--c-text);
+	font-size: var(--fz-base);
+  font-family: var(--ff-sans-serif);
+  line-height: 1.6;
+  background-color: var(--bg-body);
+  font-feature-settings: "palt";
+}
+
+
+//----------------------------------------------------
+// header
+//----------------------------------------------------
+
+.header {
+  line-height: 1;
+  .site_ttl {
+  }
+	&__nav {
+		ul {
+			display: flex;
+			list-style: none;
+			text-align: center;
+		}
+		li {
+			width: calc(100% / 4);
+			&:not(:last-child) {
+				a {
+					border-right: 1px solid #fff;
+				}
+			}
+		}
+		a {
+			display: block;
+			padding: 20px;
+			text-decoration: none;
+			background-color: var(--c-primary);
+			color: #fff;
+			transition: all ,.7;
+			&:hover {
+				opacity: .8;
+			}
+		}
+	}
+}
+
+//----------------------------------------------------
+// footer
+//----------------------------------------------------
+.pageTop {
+  a {
+    padding: 7px 10px 11px;
+    margin: 0;
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+    right:10px;
+    z-index: 1;
+    background: var(--c-primary);
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 3px;;
+    color: #fff;
+    line-height: 1;
+    &:before {
+      font-family:"FontAwesome";
+      content:"\f0aa";
+      margin-right: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+  @media only screen and (max-width: $md) {
+    a {
+      bottom: 30px;
+    }
+  }
+}
+
+
+.footer {
+  clear: both;
+  background-color: var(--bg-footer);
+  text-align: center;
+  padding: 20px 5px 10px;
+  .footer_nav_list {
+    margin-bottom: 20px;
+    ul {
+      letter-spacing: -.4em;
+      li {
+        display: inline-block;
+        margin-right: 10px;
+        letter-spacing: normal;
+        a {
+          color: #fff;
+          font-size: 1.3rem;
+          text-decoration: none;
+        }
+        &:not(:last-child) {
+          a {
+            &::after {
+              content: '|';
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .copyright {
+    color: #fff;
+    font-size: 1.2rem;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  @media only screen and (max-width: $md) {
+    padding: 0 0 10px;
+    .footer_nav_list {
+      margin-bottom: 20px;
+      ul {
+        li {
+          display: block;
+          margin: auto 0;
+          a {
+            position: relative;
+            display: block;
+            padding: 15px 20px 15px 30px;
+            text-decoration: none;
+            text-align: left;
+            border-bottom: 1px solid #fff;
+            background-color: desaturate( #79b46d, 15% );
+            &::before {
+              position: absolute;
+              content: "";
+              top: 0;
+              bottom: 0;
+              left: 10px;
+              width: 6px;
+              height: 6px;
+              margin: auto;
+              border-top: 2px solid #fff;
+              border-right: 2px solid #fff;
+              -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+          }
+          &:not(:last-child) {
+            a {
+              &::after {
+                content: '';
+                margin-left: 0;
+              }
+            }
+          }
+        }
+      }
+
+    }
+    .copyright {
+      font-size: 1.2rem;
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+//----------------------------------------------------
+// コンテンツエリア
+//----------------------------------------------------
+
+main {
+
+}
+
+//<a href="tel:">のリンクをPC表示時に無効
+@media(min-width: 768px) {
+  a[href^="tel:"]{
+    pointer-events: none;
+    text-decoration: none;
+    color: var(--c-text);
+  }
+}
+
+.pc-only {display: none !important;}
+.sp-only {display: block !important;}
+@media (min-width:$md) {
+  .pc-only {display: block !important;}
+  .sp-only {display: none !important;}
+}
+
+
+.inner {
+	max-width: var(--w-base);
+	padding: 0 15px;
+	margin: auto;
+	box-sizing: content-box;
+}
+
+//----------------------------------------------------
+// page-top
+//----------------------------------------------------
+
+.page-top {
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+	z-index: 10;
+  a {
+		height: 50px;
+		width: 50px;
+    margin: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+    background: var(--c-primary);
+    text-decoration: none;
+    border-radius: 50%;
+    color: #fff;
+		line-height: 1;
+		font-size: 3rem;
+		font-weight: 400;
+		svg {
+			fill:none;
+			stroke:#FFFFFF;
+			stroke-width:2;
+			stroke-linecap:round;
+			stroke-linejoin:round;
+		}
+  }
+}
+
+//----------------------------------------------------
+// footer
+//----------------------------------------------------
+
+.footer {
+  background-color: var(--bg-footer);
+  .copyright {
+    color: #fff;
+    font-size: 1.2rem;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}

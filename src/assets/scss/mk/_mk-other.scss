@@ -1,0 +1,22 @@
+
+.mk-address-table01 {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 1.5vw;
+	dt,dd {
+	}
+	dt {
+		width: 70px;
+	}
+	dd {
+		width: calc(100% - 70px);
+	}
+	@media (min-width: $md) {
+		dt {
+			width: 100px;
+		}
+		dd {
+			width: calc(100% - 100px);
+		}
+	}
+}
