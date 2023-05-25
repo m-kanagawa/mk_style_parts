@@ -1,4 +1,8 @@
-<%- include('tpl/_header') %>
+<% 
+let title = 'モジュール'; 
+let pageId = 'mk-module'; 
+%>
+<%- include('./tpl/_header', { title, pageId }) %>
 
 
 
@@ -209,4 +213,4 @@
 
 </div>
 
-<%- include('tpl/_footer') %>
+<%- include('tpl/_footer', { pageId }) %>

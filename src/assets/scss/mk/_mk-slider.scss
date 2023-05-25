@@ -22,7 +22,7 @@
 		margin: auto;
 		margin-right: min(7vw, 100px);
 		color: #000;
-		@include clamp_fontsize(16, 320, 1200, 60);
+		@include clamp_fontsize(16, 320, 1190, 60);
 		font-weight: 700;
 	}
 	// ナビゲーションボタンのサイズと色
@@ -123,6 +123,89 @@
 }
 
 
+// ===================================================================
+// メインビジュアル
+// ===================================================================
+.mk-mv002 {
+	padding: 0 min(4vw,100px);
+	&__inner {
+		overflow: hidden;
+		max-width: 1600px;
+		max-height: 700px;
+		margin: auto;
+		border-radius: min(2vw,20px);
+		box-shadow: 0 0 10px rgba(var(--c-primary),.3);
+		img {
+			width: 100%;
+			// object-fit: cover;
+			// object-position: center center;
+		}
+	}
+	.swiper-slide {
+		max-height: 700px;
+		.swiper-catch {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: #5a2d29;
+				background: linear-gradient(rgba(#fff,0),rgba(#fff,0.8));
+			}
+		}
+		.swiper-catch-text {
+			position: relative;
+			z-index: 1;
+			padding: min(6vw,50px);
+			@include clamp_fontsize(20, 320, 992, 40);
+			opacity: 0;
+		}
+		&.swiper-slide-active {
+			.swiper-catch-text {
+				line-height: 1.4;
+				opacity: 1;
+				.char {
+					display: inline-block;
+					opacity: 0;
+					@for $i from 1 through 30 {
+						&:nth-child(#{$i}) {
+							animation: text 1s cubic-bezier(0.3, 0.72, 0.56, 0.99) #{$i * 0.05}s forwards;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes text {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px) translateY(-10px) scale(1.3);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.swiper-slide-active,
+.swiper-slide-duplicate-active,
+.swiper-slide-prev {
+	.swiper-img {
+		// animation: zoomUp 14s linear 0s normal both;
+	}
+}
+@keyframes zoomUp {
+  0% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
 
 
 

@@ -1,4 +1,11 @@
-<%- include('tpl/_header') %>
+<% 
+let title = 'ボタン'; 
+let pageId = 'mk-btn'; 
+%>
+<%- include('./tpl/_header', { title, pageId }) %>
+
+
+<%- //include('tpl/_header') %>
 	<h1 class="parts-title">ボタン</h1>
 	<div class="inner module-space">
 
@@ -23,4 +30,4 @@
 
 
 	</div>
-	<%- include('tpl/_footer') %>
+	<%- include('tpl/_footer', { pageId }) %>

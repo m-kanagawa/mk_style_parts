@@ -1,8 +1,21 @@
+.title-wrap {
+	.mk-title01,
+	.mk-title02,
+	.mk-title03,
+	.mk-title04,
+	.mk-title05,
+	.mk-title06,
+	.mk-title07,
+	.mk-title08 {
+		margin-bottom: min(10vw,120px);
+	}
+}
+
+
 
 .mk-title01 {
 	padding: 10px 20px 10px;
 	margin: 10px 10px;
-	margin-bottom: 3em;
 	background: #6ebbb4;
 	box-shadow: 0px 0px 0 10px #6ebbb4;
 	border: 1px solid #fff;
@@ -94,7 +107,6 @@
   }
 }
 
-
 .mk-title05 {
 	display: flex;
 	align-items: center;
@@ -146,3 +158,15 @@
 	clip-path: polygon(0 0,100% 0, 100% 60%, 50% 100%,0 60%);
 }
 //参考：https://qiita.com/mamenon/items/7166f8077d047f145f1d
+
+
+.mk-title07 {
+	text-align: center;
+	span {
+		display: inline;
+		@include clamp_fontsize(14, 320, 992, 28);
+		background-image: linear-gradient(rgba(0,0,0,0) 70%, var(--c-primary) 70%);
+	}
+}
+
+

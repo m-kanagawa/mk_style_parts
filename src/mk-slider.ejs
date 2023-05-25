@@ -1,8 +1,13 @@
-<%- include('tpl/_header') %>
+<% 
+let title = 'スライダー'; 
+let pageId = 'mk-slider'; 
+%>
+<%- include('./tpl/_header', { title, pageId }) %>
+
+
 	<h1 class="parts-title">スライダー</h1>
 
-
-  <div class="swiper mk-mv mk-mv001">
+  <div class="swiper mk-mv001">
     <div class="swiper-wrapper mk-mv001__inner">
       <div class="swiper-slide">
         <img src="./assets/img/mv_img001.jpg" alt="" class="pc-only">
@@ -38,5 +43,52 @@
     <div class="swiper-button-next"></div>
   </div>
 
+
+
+
+	<div class="mv mk-mv002 swiper">
+		<div class="mk-mv002__inner swiper-wrapper">
+
+				<div class="swiper-slide">
+					<a href="#" target="_blank">
+            <div class="swiper-img">
+              <img src="./assets/img/mv_img001.jpg" alt="" class="pc-only">
+              <img src="./assets/img/mv_img001_sp.jpg" alt="" class="sp-only">                                                                                                                                                                                                                                     
+            </div>
+            <div class="swiper-catch">
+              <p class="swiper-catch-text js-split-text">テキストテキストテキスト</p>
+            </div>
+					</a>
+				</div>
+
+				<div class="swiper-slide">
+					<a href="#" target="_blank">
+            <div class="swiper-img">
+              <img src="./assets/img/mv_img002.jpg" alt="" class="pc-only">
+              <img src="./assets/img/mv_img002_sp.jpg" alt="" class="sp-only">
+            </div>
+            <div class="swiper-catch">
+              <p class="swiper-catch-text js-split-text">テキストテキストテキスト</p>
+            </div>
+					</a>
+				</div>
+
+				<div class="swiper-slide">
+					<a href="#" target="_blank">
+            <div class="swiper-img">
+              <img src="./assets/img/mv_img003.jpg" alt="" class="pc-only">
+              <img src="./assets/img/mv_img003_sp.jpg" alt="" class="sp-only">
+            </div>
+            <div class="swiper-catch">
+              <p class="swiper-catch-text js-split-text">テキストテキストテキスト</p>
+            </div>
+					</a>
+				</div>
+
+			</div>
+		</div>
+
+
+  </div>
 	
-	<%- include('tpl/_footer') %>
+<%- include('tpl/_footer', { pageId }) %>

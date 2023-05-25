@@ -1,4 +1,8 @@
-<%- include('tpl/_header') %>
+<% 
+let title = 'その他'; 
+let pageId = 'mk-other'; 
+%>
+<%- include('./tpl/_header', { title, pageId }) %>
 
 		<h1 class="parts-title">その他</h1>
 
@@ -88,4 +92,4 @@
 			</div>
 		</div>
 
-<%- include('tpl/_footer') %>
+		<%- include('tpl/_footer', { pageId }) %>

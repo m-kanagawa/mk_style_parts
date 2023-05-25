@@ -1,4 +1,8 @@
-<%- include('tpl/_header') %>
+<% 
+	let title = 'モジュールリスト'; 
+	let pageId = 'home'; 
+%>
+<%- include('tpl/_header', { title, pageId }) %>
 
 <section class="sec-top01">
   <div class="module-space inner">
@@ -70,4 +74,4 @@
 		<%- //include('tpl/_cvr') %>
 
 
-    <%- include('tpl/_footer') %>
+    <%- include('tpl/_footer', { pageId }) %>

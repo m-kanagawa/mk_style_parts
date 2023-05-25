@@ -1,7 +1,14 @@
-<%- include('tpl/_header') %>
-	<h1 class="parts-title">タイトル</h1>
-	<div class="inner module-space">
+<% 
+	let title = 'タイトル'; 
+	let pageId = 'mk-title'; 
+%>
+<%- include('tpl/_header', { title, pageId }) %>
 
+	<h1 class="parts-title">タイトル</h1>
+	<div class="inner module-space title-wrap">
+
+
+		<h2 class="mk-title07"><span>テキストテキストテキスト<br>テキストテキスト</span></h2>
 
 		<h2 class="mk-title01">テキストテキストテキスト<br>テキストテキストテキストテキスト</h2>
 		<h2 class="mk-title02">テキストテキストテキスト<br>テキストテキストテキストテキスト</h2>
@@ -14,4 +21,5 @@
 
 
 	</div>
-<%- include('tpl/_footer') %>
+
+<%- include('tpl/_footer', { title, pageId }) %>

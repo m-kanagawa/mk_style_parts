@@ -43,11 +43,6 @@ const destPath = {
  ejs: 'docs/'
 }
 
-// copyFiles
-// const copyFiles = () =>
-//   src(srcPath.html)
-//   .pipe(dest(destPath.html));
-
 const ejsFiles = () => {
 	return src(srcPath.ejs) //コンパイル元
   .pipe(
