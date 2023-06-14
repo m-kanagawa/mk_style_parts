@@ -1,4 +1,64 @@
 
+.timeline {
+	width: 96%;
+	max-width: 940px;
+	padding: min(10vw,80px) 15px;
+	margin: 0 auto;
+	box-sizing: content-box;
+	&__list {}
+	&__list-item {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		line-height: 1.5;
+		font-size: 16px;
+		&:last-child {
+			.content {
+				padding-bottom: 10px;
+			}
+		}
+	}
+	.date {
+		width: 100%;
+		padding: 0 0 10px 30px;
+		border-left: 1px solid #aaaaaa;
+		font-weight: bold;
+	}
+	.content {
+		position: static;
+		width: 100%;
+		padding: 0 20px 30px 30px;
+		border-left: 1px solid #aaaaaa;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: -10px;
+			width: 20px;
+			height: 20px;
+			background-color: var(--c-primary);
+			border-radius: 10px;
+		}
+	}
+	@media (min-width: $md) {
+		&__list-item {
+			flex-direction: row;
+		}
+		.date {
+			width: 12%;
+			padding: 0 0;
+			border-left: none;
+		}
+		.content {
+			position: relative;
+			width: 88%;
+			padding: 0 20px 60px 4%;
+		}
+	}
+}
+
+
+
 .mk-address-table01 {
 	display: flex;
 	flex-wrap: wrap;

@@ -50,3 +50,19 @@ const swiper2 = new Swiper(".swiper.mk-mv002", {
   },
   speed: 4000, // 2秒かけてフェード
 });
+
+
+const mkSlide01 = new Swiper('.mk-slide01 .swiper', {
+  slidesPerView: 'auto',
+  spaceBetween: 16,
+  grabCursor: true,
+ 
+  scrollbar: {
+    el: '.swiper-scrollbar', // スクロールバー要素のクラス
+  },
+  breakpoints: {
+    1025: {
+      spaceBetween: 32,
+    }
+  },
+});
