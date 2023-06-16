@@ -57,6 +57,65 @@
 	}
 }
 
+.block01 {
+  .mk-content01__box01{
+    width: 100vw;
+   	margin: 0 calc(50% - 50vw);
+  }
+}
+.block02 {
+  .mk-content01__box01{
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+}
+.block03 {
+  .mk-content01__box01{
+    width: 100vw;
+    margin-right: calc(50% - 50vw);
+  }
+}
+
+.mk-content01 {
+	max-width: var(--w-base);
+	padding: 0 15px;
+  margin: 50px auto;
+  border: 2px solid #ccc;
+	box-sizing: content-box;
+  &__sec {
+		margin: 30px 0;
+  }
+	&__box01 {
+		position:relative;
+		z-index:-1;
+		background: var(--c-primary);;
+		color:#fff;
+		padding: 80px 0;
+		text-align:center;
+		font-size: clamp(18px,2.6vw,26px);
+	}
+	&__text-box {
+		padding: 20px;
+		text-align:center;
+		// background-color: var(--c-secondary);
+		p {
+			text-align: left;
+		}
+	}
+  .block02,.block03{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    .mk-content01__text-box {
+      min-width:40%;
+      font-size:clamp(12px,1.6vw,16px);
+    }
+  }
+  .block03{
+    flex-direction: row-reverse;
+  }
+}
+
 
 
 .mk-address-table01 {
