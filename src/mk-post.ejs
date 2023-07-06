@@ -1,0 +1,35 @@
+<% 
+let title = 'その他'; 
+let pageId = 'mk-other'; 
+%>
+<%- include('./tpl/_header', { title, pageId }) %>
+
+<main>
+	
+	<h1 class="parts-title">post</h1>
+
+	<h2 class="parts-title2">mk-post01</h2>
+
+	<div class="mk-post01">
+		<div class="mk-post01__inner">
+			<div class="text-box">
+				<div class="box">
+					<h2 class="no-style">NEWS</h2>
+					<p>〇〇〇〇からのお知らせ</p>
+				</div>
+				<p class="btn_more"><a href="/news/">News List</a></p>
+			</div>
+			<div class="news-box">
+				<ul>
+					<li><a href="#"><span class="data">2021.05.17</span><span>○○○○○のホームページを新しくオープンしました。</span></a></li>
+					<li><a href="#"><span class="data">2021.05.17</span><span>○○○○○のホームページを新しくオープンしました。</span></a></li>
+					</li>
+					<li><a href="#"><span class="data">2021.05.17</span><span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+</main>
+<%- include('tpl/_footer', { pageId }) %>

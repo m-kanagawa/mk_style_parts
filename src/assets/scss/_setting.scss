@@ -3,11 +3,19 @@
 //----------------------------------------------------
 
 //Googlefont
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700,900&display=swap&subset=japanese');
+// https://fonts.google.com/specimen/Zen+Old+Mincho
+// https://fonts.google.com/specimen/Lora
+@import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&display=swap');
+// Regular 400 のみ
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+// rgbの確認
+// https://ionicframework.jp/docs/theming/color-generator/
 
 :root {
 	--c-base: #fff;
 	--c-primary: #79b46d;
+	--c-primary-rgb: 121,180,109;
 	--c-secondary: #eee;
 	--c-tertiary: #fff;
 	--c-accent: #fff;
@@ -49,7 +57,10 @@
   --bp-xXl: 1400px;
 
   --ff-sans-serif: Arial,'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-  --ff-serif: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+
+  --ff-serif: 'Zen Old Mincho', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+
+  --ff-eng: 'Lora', 'Zen Old Mincho', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
 
 }
 

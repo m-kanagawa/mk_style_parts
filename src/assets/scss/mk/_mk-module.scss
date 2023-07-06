@@ -251,7 +251,7 @@
 		max-width: 1200px;
 		margin: auto;
 		&:nth-of-type(even) {
-			flex-direction: row-reverse;
+			flex-direction: column;
 		}
 		+ * {
 			margin-top: 20px;
@@ -277,6 +277,9 @@
 		padding: 60px 10px;
 		&__inner {
 			flex-direction: row;
+			&:nth-of-type(even) {
+				flex-direction: row-reverse;
+			}
 		}
 		figure {
 			width: 64%;

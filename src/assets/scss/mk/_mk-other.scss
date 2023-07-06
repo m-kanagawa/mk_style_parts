@@ -1,4 +1,42 @@
 
+.mk-lead {
+	padding: 40px 15px;
+	margin-bottom: 0;
+	background: url("https://picsum.photos/1920/800") no-repeat left center;
+	background-size: cover;
+	background-attachment: scroll;
+	text-align: center;
+	&__inner {
+		max-width: 1200px;
+		padding: 20px;
+		margin: auto;
+		background-color: rgba(#fff,.8);
+	}
+	h2 {
+		padding-bottom: 10px;
+		margin-bottom: 1em;
+		border-bottom: 2px solid var(--c-primary);
+		font-size: 2rem;
+		font-weight: normal;
+
+	}
+	&__text {
+		margin-bottom: 40px;
+		line-height: 2;
+	}
+	@media (min-width: 768px + 1px) {
+		padding: 8vw 15px;
+		background-attachment: fixed;
+		&__inner {
+			padding: 60px;
+		}
+		h2 {
+			font-size: 3rem;
+		}
+	}
+}
+
+
 .timeline {
 	width: 96%;
 	max-width: 940px;
@@ -56,6 +94,64 @@
 		}
 	}
 }
+
+
+.tel-box {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: min(6vw,50px);
+	&__text {
+		position: relative;
+		width: 100%;
+		padding: 20px;
+		margin-right: 0;
+		margin-bottom: min(10vw, 60px);
+		background-color: var(--c-primary);
+		color: var(--c-white);
+		@include clamp_fontsize(22, 576, 1200, 25);
+		text-align: center;
+		&::after {
+			display: block;
+			position: absolute;
+			top: auto;
+			right: 0;
+			bottom: calc(-75px + 0.3%);
+			left: 0;
+			content: "";
+			width: 100%;
+			height: 100%;
+			clip-path: polygon(50% 50%, 0 0, 100% 0);
+			background-color: var(--c-primary);
+		}
+	}
+	&__tel {
+		font-size: 3.6rem;
+		font-weight: 700;
+	}
+	@media (min-width: $sm) {
+		flex-direction: row;
+		&__text {
+			width: auto;
+			margin-right: calc(40px + min(4vw,30px));
+			margin-bottom: 0;
+			&::after {
+				top: 0;
+				right: calc(-40px + 0.2%);
+				bottom: auto;
+				left: auto;
+				width: 40px;
+				clip-path: polygon(0 0, 0% 100%, 100% 50%);
+			}
+		}
+		&__tel {
+			font-size: 3.6rem;
+			@include clamp_fontsize(22, 576, 1200, 36);
+			font-weight: 700;
+		}
+	}
+}
+
 
 .block01 {
   .mk-content01__box01{
@@ -117,7 +213,6 @@
 }
 
 
-
 .mk-address-table01 {
 	display: flex;
 	flex-wrap: wrap;
@@ -139,3 +234,139 @@
 		}
 	}
 }
+
+
+
+/*----------------------------------------------------
+ 診療時間
+----------------------------------------------------*/
+.time {
+	width: 600px;
+	right: 0;
+	// .time__inner を右にずらした時、元の表示領域をホバーすると
+	// .time__inner の位置が元に戻ってしまうので、
+	// 見出し部分をホバーした時だけ、元の位置に戻るように下記を指定
+	// ※ .time__inner には pointer-events: auto; を指定する
+	pointer-events: none;
+	@media (max-width: 768px) {display: none;}
+	// false の時は右下に絶対配置
+	&[data-scroll-position="false"] {
+		@media not all and (min-width: 1400px) {
+			position: fixed;
+			top: 300px;
+			z-index: 10;
+			.time__inner {
+				transform: translateX(530px);
+			}
+		}
+		@media (min-width: 1400px) {
+			position: absolute;
+			top: 460px;
+			z-index: 10;
+			.time__inner {
+				transform: translateX(0);
+			}
+		}
+	}
+	// true の時は右上に固定 + 中身（.time__inner）だけ右にずらす
+	&[data-scroll-position="true"] {
+		position: fixed;
+		top: 500px;
+		z-index: 10;
+		.time__inner {
+			transform: translateX(530px);
+		}
+	}
+	// ホバー時は中身を元の位置に戻す
+	&:hover {
+		.time__inner {
+			transform: translateX(0);
+		}
+	}
+	&__inner {
+		display: flex;
+		align-items: center;
+		width: 600px;
+		height: 250px;
+		padding: 20px;
+		background-color: lighten( #f60, 35% );
+		border-radius: 20px 0 0 20px;
+		transition: transform .5s ease-in-out;
+		transform: translateX(550px);
+		pointer-events: auto;
+	}
+	&__title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		margin-right: 25px;
+		padding-right: 15px;
+		border-right: 1px solid #eee;
+
+		span {
+			position: relative;
+			writing-mode: vertical-rl;
+			padding-top: 1.5em;
+			padding-right: 5px;
+			padding-left: 5px;
+			font-size: 18px;
+			color: #f60;
+			letter-spacing: .1em;
+			text-align: center;
+			line-height: 1;
+			background-image: url('../img/time_icon.png');
+			background-repeat: no-repeat;
+			background-position: top center;
+			&::before {
+				margin-bottom: 5px;
+				// font-family: fontAwesome;
+				font-family: "Font Awesome 5 Free";
+				content: '\f073';
+				font-size: 1.8rem;
+				font-weight: 400;
+			}
+		}
+	}
+	&__table {
+		font-size: 15px;
+		thead {
+			tr {
+				th {
+					&:first-child {
+						padding: .5em;
+						letter-spacing: .1em;
+					}
+					&:not(:first-child) {
+						padding: 1em;
+					}
+				}
+				td {
+					padding: .5em;
+				}
+			}
+		}
+		tbody {
+			tr {
+				th {
+					width: 140px;
+					padding: .5em;
+					letter-spacing: .1em;
+				}
+				td {
+					padding: .5em;
+					text-align: center;
+					color: #f60;
+				}
+			}
+		}
+		tr {
+			border-bottom: 1px solid #eee;
+			th {
+				text-align: left;
+			}
+		}
+	}
+}
+
+

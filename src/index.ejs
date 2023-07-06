@@ -3,6 +3,7 @@
 	let pageId = 'home'; 
 %>
 <%- include('tpl/_header', { title, pageId }) %>
+<main>
 
 <section class="sec-top01">
   <div class="module-space inner">
@@ -20,8 +21,10 @@
       <li><a href="./mk-btn.html">ボタン</a></li>
       <li><a href="./mk-other.html">その他</a></li>
     </ul>
+		<p>テキストテキスト<span class="text-dot">テキストテキスト<br>テキストテキスト</span>テキストテキストテキスト<span class="text-wavy">テキストtext-decoration-skip-ink</span>テキストテキストテキストテキストテキスト</p>
   </div>
 </section>
+
 		<!-- <div class="youtube-box">
 			<div class="youtube">
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/siG6etT29YM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -74,4 +77,5 @@
 		<%- //include('tpl/_cvr') %>
 
 
-    <%- include('tpl/_footer', { pageId }) %>
+</main>
+<%- include('tpl/_footer', { pageId }) %>

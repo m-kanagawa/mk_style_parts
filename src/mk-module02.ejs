@@ -1,0 +1,59 @@
+<% 
+let title = 'モジュール02'; 
+let pageId = 'mk-module02'; 
+%>
+<%- include('./tpl/_header', { title, pageId }) %>
+<main>
+
+
+
+<h2 class="parts-title">モジュールパーツ</h2>
+<h2 class="parts-title2">module01</h2>
+
+<section class="mk-module01">
+	<div class="mk-module01__inner">
+		<div class="mk-module01__text-box">
+			<h2>エイブラハム・リンカーン<span>Abraham Lincoln</span></h2>
+			<figure class="mk-module01__img"><img src="https://picsum.photos/id/57/960/500" alt=""></figure>
+			<div class="mk-module01__text">
+				<p>もし、木を切り倒すのに6時間与えられたら、<br>私は最初の4時間を<br>斧を研ぐのに費やすだろう。</p>
+			</div>
+			<p><a href="#" class="add_arrow">詳しくはこちら</a></p>
+		</div>
+	</div>
+	<div class="mk-module01__inner">
+		<div class="mk-module01__text-box">
+			<h2>鈴木一朗<span>Ichiro</span></h2>
+			<figure class="mk-module01__img"><img src="https://picsum.photos/id/69/960/500" alt=""></figure>
+			<div class="mk-module01__text">
+				<p>壁というのは、できる人にしかやってこない。<br>超えられる可能性がある人にしかやってこない。<br>だから、壁がある時はチャンスだと思っている。</p>
+			</div>
+			<p><a href="#" class="add_arrow">詳しくはこちら</a></p>
+		</div>
+	</div>
+	
+	<div class="mk-module01__inner">
+		<div class="mk-module01__text-box">
+			<h2>スティーブ・ジョブズ<span>Steve Jobs</span></h2>
+			<figure class="mk-module01__img"><img src="https://picsum.photos/id/71/960/500" alt=""></figure>
+			<div class="mk-module01__text">
+				<p>最も重要な決定とは、何をするかではなく、何をしないかを決めることだ。</p>
+			</div>
+			<p><a href="#" class="add_arrow">詳しくはこちら</a></p>
+		</div>
+	</div>
+	<div class="mk-module01__inner">
+		<div class="mk-module01__text-box">
+			<h2>坂本 龍馬<span>Ryoma Sakamoto</span></h2>
+			<figure class="mk-module01__img"><img src="https://picsum.photos/id/76/960/500" alt=""></figure>
+			<div class="mk-module01__text">
+				<p>日本を今一度<br>せんたくいたし申候</p>
+			</div>
+			<p><a href="#" class="add_arrow">詳しくはこちら</a></p>
+		</div>
+	</div>
+</section>
+
+
+</main>
+<%- include('tpl/_footer', { pageId }) %>

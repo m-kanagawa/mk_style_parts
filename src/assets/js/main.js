@@ -93,3 +93,16 @@ $(function(){
 		return false;
 	});
 });
+
+// 診療時間
+const scheduleTable = $('.time');
+$(window).on("scroll", function() {
+	if ($(this).scrollTop() > 150) {
+		scheduleTable.attr('data-scroll-position', 'true');
+	} else {
+		scheduleTable.attr('data-scroll-position', 'false');
+	}
+});
+$(window).trigger('scroll');
+
+

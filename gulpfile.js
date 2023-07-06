@@ -98,14 +98,22 @@ const imgImagemin = () => {
 
 // browserSync
 const browserSyncFunc = () => {
-  browserSync.init(browserSyncOption);
+  browserSync.init({
+		server: {baseDir: "./"},       // 基準とするディレクトリを指定
+		startPath: "docs/index.html",  // 開きたいパス
+		notify: false,                 // ブラウザ更新時に出てくる通知を非表示にする
+		open: "external",              // ローカルIPアドレスでサーバを立ち上げる
+		snippetOptions: {
+			"rule": {
+        "match": /<\/main>/i,
+        fn: function (snippet, match) {
+          return snippet + match;
+        }
+      }
+		}
+	});
 }
-const browserSyncOption = {
-  server: {baseDir: "./"},       // 基準とするディレクトリを指定
-  startPath: "docs/index.html",  // 開きたいパス
-  notify: false,                 // ブラウザ更新時に出てくる通知を非表示にする
-  open: "external",              // ローカルIPアドレスでサーバを立ち上げる
-}
+
 const browserSyncReload = (done) => { //リロード
   browserSync.reload();
   done();
