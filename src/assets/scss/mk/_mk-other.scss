@@ -370,3 +370,127 @@
 }
 
 
+.mk-flow01 {
+	padding: min(10vw,80px) 15px;
+}
+.mk-flow01 {
+	// ※拡大縮小表示のときに、白い線が入るので注意
+	--w-mk-flow01-num: 120px;
+	--w-mk-flow01-border-width: 30px;
+	--w-mk-flow01-border: calc(var(--w-mk-flow01-num) / 2);
+	--w-mk-flow01-bottom: calc(-1 * (var(--w-mk-flow01-border) + var(--w-mk-flow01-border-width)));
+
+	--w-mk-flow01-num-sp: 60px;
+	--w-mk-flow01-border-width-sp: 15px;
+	--w-mk-flow01-border-sp: calc(var(--w-mk-flow01-num-sp) / 2);
+	--w-mk-flow01-bottom-sp: calc(-1 * (var(--w-mk-flow01-border-sp) + var(--w-mk-flow01-border-width-sp)));
+
+	--c-mk-flow01-bg1: #002E73;
+	--c-mk-flow01-bg2: #fff;
+	&__inner {
+		display: flex;
+		&:first-child {
+			.num {
+				padding: 40px 0 20px 0;
+			}
+			.text-box {
+				margin-top: 0;
+			}
+		}
+		&:last-child {
+			.num {
+				&::after,
+				span::after {content: none;}
+			}
+		}
+		.num {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			width: 100%;
+			max-width: var(--w-mk-flow01-num-sp);
+			padding: 40px 0 20px 0;
+			margin-bottom: 4px;
+    	border-left-color: inherit;
+			background-color: var(--c-mk-flow01-bg1);
+			color: #fff;
+			@include clamp_fontsize(30, 576, 1200, 60);
+			&::after,
+			span::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: var(--w-mk-flow01-bottom-sp);
+				height: 0;
+				width: 0;
+				border: var(--w-mk-flow01-border-sp) solid transparent;
+				border-top-width: var(--w-mk-flow01-border-width-sp);
+			}
+			&::after {
+				z-index: 2;
+    		border-top-color: var(--c-mk-flow01-bg1);
+			}
+			span {
+				&::after {
+					z-index: 1;
+					// transform: translateY(4px);
+					transform: translateY(4px);
+					border-top-color: var(--c-mk-flow01-bg2);
+					margin: 0;
+				}
+			}
+			@media (min-width: $md) {
+				max-width: var(--w-mk-flow01-num);
+				padding: 60px 0 20px 0;
+				margin-bottom: 10px;
+				&::after,
+				span::after {
+					bottom: var(--w-mk-flow01-bottom);
+					border: var(--w-mk-flow01-border) solid transparent;
+					border-top-width: var(--w-mk-flow01-border-width);
+				}
+				&::after {
+					z-index: 2;
+					border-top-color: var(--c-mk-flow01-bg1);
+				}
+				span {
+					&::after {
+						transform: translateY(10px);
+						border-top-color: var(--c-mk-flow01-bg2);
+					}
+				}
+			}
+		}
+		.text-box {
+			flex-grow: 1;
+			padding: 20px;
+			margin-top: 10px;
+			margin-left: 10px;
+			margin-bottom: 10px;
+			background-color: #ccc;
+			border-radius: 10px;
+		}
+		.text-box {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			figure {
+				max-width: 100px;
+				margin-bottom: 10px;
+			}
+			.text {
+				margin-left: 0;
+			}
+			@media (min-width: $md) {
+				flex-direction: row;
+				figure {
+					margin-bottom: 0;
+				}
+				.text {
+					margin-left: 20px;
+				}
+			}
+		}
+	}
+}
