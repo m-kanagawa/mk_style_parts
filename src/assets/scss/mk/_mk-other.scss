@@ -1,4 +1,33 @@
 
+
+
+
+
+.text-wavy {
+	text-decoration: underline wavy var(--c-red);
+	text-decoration-thickness: 0.2em; //線の太さ
+	text-decoration-skip-ink: none; //下線と文字の重なり方
+  text-underline-offset: 5px; //線と文字列との距離
+}
+
+.text-dot {
+	-webkit-text-emphasis: circle var(--c-red);
+  text-emphasis: circle var(--c-red);
+}
+
+.text-shadow01 {
+	color: #fff;
+	text-shadow: var(--text-shadow01);
+}
+.text-shadow02 {
+	text-shadow: var(--text-shadow02);
+}
+
+.filter-drop-shadow {
+	filter: var(--filter-drop-shadow01);
+}
+
+
 .mk-lead {
 	padding: 40px 15px;
 	margin-bottom: 0;
