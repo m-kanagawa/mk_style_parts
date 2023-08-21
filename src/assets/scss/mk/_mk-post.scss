@@ -95,3 +95,121 @@
 		}
 	}
 }
+
+
+.mk-post02 {
+	// 角丸
+	$radius-mk-post02: 5px;
+	padding: min(16vw,150px) 15px;
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		max-width: $base_width;
+		margin: auto;
+		border-radius: 30px;
+		@media (min-width: $md) {
+			flex-direction: row;
+		}
+	}
+	&__title-box {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		padding: 30px;
+		width: 100%;
+		max-width: none;
+		background-color: var(--c-primary);
+		border-radius: $radius-mk-post02 $radius-mk-post02 0 0;
+		a {
+			display: block;
+			position: relative;
+			padding: 7px 35px 7px 20px;
+			margin-top: 15px;
+			background-color: #fff;
+			border-radius: 50px;
+			color: var(--c-primary);
+			text-decoration: none;
+			&::after {
+				content: "";
+				position: absolute;
+				right: 15px;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				@include arrow(8, 2, var(--c-primary), right);
+			}
+		}
+	}
+	&__title {
+		color: #fff;
+		@include clamp_fontsize(18, 576, 992, 22);
+		font-weight: 200;
+		text-align: center;
+		line-height: 1.4;
+		letter-spacing: .1em;
+		span {
+			display: block;
+			@include clamp_fontsize(12, 576, 992, 14);
+			letter-spacing: .05em;
+		}
+	}
+	@media (min-width: $md) {
+		&__title-box {
+			max-width: 240px;
+			border-radius: $radius-mk-post02 0 0 $radius-mk-post02;
+			a {
+				padding: 10px 35px 10px 20px;
+			}
+		}
+	}
+	&__list-box {
+		flex-grow: 1;
+		padding: 30px;
+		// background-color: rgba(var(--c-primary-rgb), 0.2);
+		background-color: #eee;
+		border-radius: 0 0 $radius-mk-post02 $radius-mk-post02;
+		.post-list {
+			> div + div {
+				border-top: 1px dotted #fff;
+			}
+		}
+		a {
+			display: flex;
+			flex-direction: column;
+			padding: 10px 0;
+			color: var(--c-text);
+			text-decoration: none;
+			transition: all,.3s;
+			&:hover {
+				background: rgba(var(--c-white-rgb), 0.2);
+			}
+		}
+		dt {
+			width: 100%;
+			margin-right: 0;
+		}
+		dd {
+			width: 100%;
+		}
+	}
+	@media (min-width: $sm) {
+		&__list-box {
+			a {
+				flex-direction: row;
+			}
+			dt {
+				width: 100px;
+				margin-right: 20px;
+			}
+			dd {
+				width: calc(100% - 100px);
+			}
+		}
+	}
+	@media (min-width: $md) {
+		&__list-box {
+			border-radius: 0 $radius-mk-post02 $radius-mk-post02 0;
+		}
+	}
+}
