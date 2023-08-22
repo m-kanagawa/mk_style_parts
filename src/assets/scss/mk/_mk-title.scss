@@ -169,4 +169,28 @@
 	}
 }
 
-
+.mk-title08 {
+	display: flex;
+	align-items: center;
+	margin-bottom: 3em;
+	span {
+		width: calc(100% - 60px);
+		max-width: $base_width;
+		@include clamp_fontsize(18, 576, 992, 20);
+		font-weight: 600;
+	}
+	&::before,
+	&::after {
+		content: "";
+		height: 1px;
+		flex-grow: 1;
+		background-color: #666;
+	}
+	&::before { margin-right: 15px; }
+	&::after { background: transparent; }
+	@media (min-width: $base_width + 70px) {
+		span {
+			width: 100%;
+		}
+	}
+}
