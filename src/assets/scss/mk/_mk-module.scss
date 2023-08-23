@@ -383,14 +383,14 @@
 			width: 100%;
 			min-height: auto;
 			padding-top: 65%;
-			background-image: url("https://picsum.photos/960/360");
+			background-image: url("https://picsum.photos/id/42/960/360");
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: cover;
 		}
 		&.reverse {
 			&::before {
-				background-image: url("https://picsum.photos/960/360");
+				background-image: url("https://picsum.photos/id/48/960/360");
 			}
 			.mk-box01__text-wrap {
 				justify-content: flex-end;

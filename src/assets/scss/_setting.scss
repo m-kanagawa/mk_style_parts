@@ -25,7 +25,8 @@
 	--c-header-text: #f60;
 	--c-footer-text: #f60;
 	--c-nav-text: #f60;
-	--c-btn-text: #f60;
+	--c-btn-text: var(--c-primary);
+	--c-btn-bg: var(--c-white);
 
 	--bg-body: #fff;
 	--bg-header: var(--c-primary);
