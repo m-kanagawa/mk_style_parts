@@ -527,3 +527,53 @@
 		}
 	}
 }
+
+
+
+// 円グラフ
+.graph-box {
+	position: relative;
+	max-width: 480px;
+	.num {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		margin: auto;
+		@include clamp_fontsize(48, 320, 750, 96);
+		font-weight: 700;
+		background: linear-gradient(90deg, #ed2e55, #f88099);
+		background: -webkit-linear-gradient(0deg, #ed2e55, #f88099);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		span {
+			@include clamp_fontsize(30, 320, 750, 60);
+		}
+	}
+}
+
+.graph-circle {
+	transform-origin:center;
+	transform:rotate(-90deg);
+	.graph-circle01 {
+		fill:none;
+		stroke-width: 4.5;
+		stroke-dasharray: 100;
+		/* 最初は非表示状態 */
+		stroke-dashoffset:100;
+		stroke: url(#Gradient1);
+		&.js-ani-on {
+			animation: graph-circle 1.5s ease-in-out forwards;
+		}
+	}
+}
+.stop1 { stop-color: #ed2e55; }
+.stop2 { stop-color: #f88099; }
+
+@keyframes graph-circle {
+	to {stroke-dashoffset: 5;}
+}
