@@ -10,15 +10,28 @@
 	margin-bottom: min(10vw,80px);
 }
 
+.btn-box {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	> * {
+		width: calc(100% / 2);
+	}
+	@media (min-width: $md) {
+		> * {
+			width: calc(100% / 3);
+		}
+	}
+}
+
 
 .mk-btn01 {
-	margin: 20px 0 40px;
 	text-align: center;
 	a {
 		display:inline-block;
 		overflow: hidden;
 		position: relative;
-		padding: 10px 100px;
+		padding: 10px min(6vw,100px);
 		text-align:center;
 		box-sizing:border-box;
 		background: #43A047;
@@ -144,7 +157,8 @@
 			background-position: 99% 50%;
 		}
 		@media (min-width: $sm) {
-			padding: 1.3em min(14vw,260px);
+			// padding: 1.3em min(14vw,260px);
+			padding: 1.3em;
 			font-size: 22px;
 			// @include clamp_fontsize(16, 576, 992, 22);
 			&::before {
@@ -352,6 +366,74 @@
 			&::after {
 				right: 30px;
 			}
+		}
+	}
+}
+
+
+.mk-btn08 {
+	margin: 20px 0;
+	a {
+		display: inline-block;
+		position: relative;
+		z-index: 1;
+		padding: 8px 40px 10px;
+		background: linear-gradient(to right, #183a9c 0%, #020294 100%);
+		color: #fff;
+		font-size: 16px;
+		text-decoration: none;
+		transition: all 0.5s 0.2s ease;
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: calc(100% - 6px);
+			height: calc(100% - 7px);//微調整が必要
+			margin: auto;
+			background: #fff;
+			transition: transform .6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+			transform: scale(0, 1);
+			transform-origin: right top;
+		}
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 50%;
+			right: 10%;
+			margin: auto;
+			width: 8px;
+			height: 8px;
+			border-top: 2px solid #fff;
+			border-right: 2px solid #fff;
+			transform: translate(0, -50%) rotate(45deg);
+			transition: all 0.5s 0.2s ease;
+		}
+		&:hover {
+			color: #2B73BA;
+			&::before {
+				transform-origin: left top;
+				transform:scale(1, 1);
+			}
+		}
+		&:hover::after {
+			right: 8%;
+			border-top: 2px solid #020294;
+			border-right: 2px solid #020294;
+		}
+	}
+	&.btn_sm {
+		a {
+			font-size: 1.4rem;
+		}
+	}
+	&.btn_lg {
+		a {
+			font-size: 1.8rem;
 		}
 	}
 }
