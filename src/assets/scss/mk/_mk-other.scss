@@ -577,3 +577,50 @@
 @keyframes graph-circle {
 	to {stroke-dashoffset: 5;}
 }
+
+
+// テキストを目立たせる（光沢）
+.mk-shiny-box {//この設定はデモようなので、必要なし
+	background-color: var(--c-primary);
+	padding: min(12vw,120px) min(4vw,40px);
+	margin: 0 0 min(12vw,120px) 0;
+	p {
+		display: table;
+		padding: 0 40px;
+		color: #fff;
+		@include clamp_fontsize(30, 320, 750, 60);
+		&::before {
+			content: "\f08e";
+			font-family: "Font Awesome 6 Free";
+			font-weight: 600;
+			margin-right: 20px;
+			color: #fff;
+		}
+	}
+}
+
+.mk-shiny {
+	position: relative;
+	overflow: hidden;
+	&::after {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 50px;
+    height: 50px;
+    background-image:
+			linear-gradient(100deg, rgba(255, 255, 255, 0) 10%,
+		 white 100%, rgba(255, 255, 255, 0) 0%);
+    animation-name: shiny;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+	}
+}
+@keyframes shiny {
+	0% {transform: scale(0) rotate(25deg);opacity: 0}
+	50% {transform: scale(1) rotate(25deg);opacity: 1;}
+	100% {transform: scale(26) rotate(25deg);opacity: 0;}
+	// 最後のscaleは幅に応じて変更する
+}
