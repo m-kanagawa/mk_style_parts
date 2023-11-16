@@ -1,0 +1,344 @@
+<% 
+let title = '表記ルール'; 
+let pageId = 'mk-notation'; 
+var path = "./../"
+%>
+<%- include('./../tpl/_header', { title, pageId, path: path}) %>
+
+<main>
+
+
+	<h1 class="parts-title">表記ルール</h1>
+	<div class="inner module-space">
+		<p class="mb20">品質向上の観点から、統一のルールを設定し<span class="bold c-primary">表記ゆれ</span>の防止に。</p>
+		<div class="notation-box">
+			<div class="notation-box__inner">
+				<h2>漢字⇔ひらがなの表記</h2>
+				<table>
+					<thead>
+						<tr><th>採用表記</th><th>NG表記</th></tr>
+					</thead>
+					<tbody>
+						<tr><td>あらかじめ</td><td>予め</td></tr>
+						<tr><td>あわせて</td><td>併せて</td></tr>
+						<tr><td>言う</td><td>いう</td></tr>
+						<tr><td>一旦</td><td>いったん</td></tr>
+						<tr><td>うえ</td><td>上</td></tr>
+						<tr><td>および</td><td>及び</td></tr>
+						<tr><td>ください</td><td>下さい</td></tr>
+						<tr><td>こと</td><td>事</td></tr>
+						<tr><td>ごと</td><td>毎</td></tr>
+						<tr><td>お客様</td><td>お客さま</td></tr>
+						<tr><td>先ほど</td><td>先程</td></tr>
+						<tr><td>さらに</td><td>更に</td></tr>
+						<tr><td>すでに</td><td>既に</td></tr>
+						<tr><td>すべて</td><td>全て</td></tr>
+						<tr><td>是非</td><td>ぜひ</td></tr>
+						<tr><td>たくさん</td><td>沢山</td></tr>
+						<tr><td>ただし</td><td>但し</td></tr>
+						<tr><td>～のため</td><td>～の為</td></tr>
+						<tr><td>できる／できます</td><td>出来る／出来ます</td></tr>
+						<tr><td>お問い合わせ</td><td>お問合せ／お問い合せ／お問合わせ</td></tr>
+						<tr><td>～のとおり</td><td>～の通り</td></tr>
+						<tr><td>～する時</td><td>～するとき</td></tr>
+						<tr><td>ともない</td><td>伴い</td></tr>
+						<tr><td>ともに</td><td>共に</td></tr>
+						<tr><td>尚</td><td>なお</td></tr>
+						<tr><td>なかなか</td><td>中々</td></tr>
+						<tr><td>など</td><td>等</td></tr>
+						<tr><td>ひとつ／ふたつ</td><td>一つ／2つ</td></tr>
+						<tr><td>他</td><td>ほか</td></tr>
+						<tr><td>ほとんど</td><td>殆ど</td></tr>
+						<tr><td>また</td><td>又</td></tr>
+						<tr><td>全く</td><td>まったく</td></tr>
+						<tr><td>まで</td><td>迄</td></tr>
+						<tr><td>申し上げる</td><td>申しあげる</td></tr>
+						<tr><td>～のような</td><td>～の様な</td></tr>
+						<tr><td>よろしく</td><td>宜しく</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="notation-box__inner">
+				<h2>よく使う表記</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>採用表記</th>
+							<th>NG表記</th>
+							<th>補足</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>いただく／頂く</td>
+							<td></td>
+							<td>いずれも可。ただしサイト内で統一すること。<br /> 「いただき、いただけ」も同様</td>
+						</tr>
+						<tr>
+							<td>いたし／致し</td>
+							<td></td>
+							<td>いずれも可。ただしサイト内で統一すること。</td>
+						</tr>
+						<tr>
+							<td>おすすめ／オススメ／お勧め</td>
+							<td>&#8211;</td>
+							<td>いずれも可。ただしサイト内で統一すること。<br /> 特に顧客より指定のない場合は「おすすめ」で記載。</td>
+						</tr>
+						<tr>
+							<td>ヶ月</td>
+							<td>ヵ月／か月／カ月／ケ月</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>こちら／コチラ</td>
+							<td>&#8211;</td>
+							<td>どちらでも可。ただしサイト内で統一すること</td>
+						</tr>
+						<tr>
+							<td>行う／行い</td>
+							<td>おこなう／おこない</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>子ども</td>
+							<td>子供／こども</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>HOME／TOP<br /> ホーム／トップページ</td>
+							<td>&#8211;</td>
+							<td>どちらでも可。ただしサイト内で統一すること</td>
+						</tr>
+						<tr>
+							<td>当社</td>
+							<td>弊社</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>パソコン</td>
+							<td>PC</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>ホームページ</td>
+							<td>HP</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>TEL／FAX</td>
+							<td>Tel／Fax</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Facebook</td>
+							<td>FACEBOOK／facebook</td>
+							<td>Facebookオフィシャル表記</td>
+						</tr>
+						<tr>
+							<td>さまざま／様々</td>
+							<td></td>
+							<td>どちらでも可。ただしサイト内で統一すること。</td>
+						</tr>
+						<tr>
+							<td>ひとつひとつ／一つひとつ</td>
+							<td>一つ一つ</td>
+							<td>どちらでも可。ただしサイト内で統一すること。<br /> 「一つ一つ」は読みにくいためNG。</td>
+						</tr>
+						<tr>
+							<td>ひとりひとり／一人ひとり／一人一人</td>
+							<td>一人々</td>
+							<td>いずれも可。ただしサイト内で統一すること</td>
+						</tr>
+						<tr>
+							<td>ください／下さい</td>
+							<td></td>
+							<td>いずれも可。ただしサイト内で統一すること</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="notation-box">
+			<div class="notation-box__inner">
+				<h2>その他表記ルール</h2>
+				<table class="type01">
+					<thead>
+						<tr>
+							<th>項目</th>
+							<th>採用表記</th>
+							<th>補足</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>ローマ字表記</td>
+							<td>ヘボン式（hebon SHIki）</td>
+							<td>ち⇒CHI　じ・ぢ⇒JI　し⇒SHI　つ⇒TSU　など</td>
+						</tr>
+						<tr>
+							<td>数字</td>
+							<td>半角アラビア数字（123）</td>
+							<td>固有名詞を除く<br /> ただし副詞に使う場合に関しては可 <br /> 例：二度とない～、一人ひとりに～</td>
+						</tr>
+						<tr>
+							<td>カタカナ表記</td>
+							<td>全角カタカナ</td>
+							<td>全角表記で統一</td>
+						</tr>
+						<tr>
+							<td>日付</td>
+							<td>yyyy/mm/dd<br /> （2017/07/22）</td>
+							<td>EPRESS ECフォーマットに合わせる<br /> 2017-07-18などはNG</td>
+						</tr>
+						<tr>
+							<td>値段表記</td>
+							<td>5,000円<br /> ¥5,000</td>
+							<td>「,」は必須<br /> 円／¥表記はサイトに合わせて使用（サイト内では統一） <br /> ¥は半角に統一（コーディングは実体参照で統一）</td>
+						</tr>
+						<tr>
+							<td>時間表記（営業時間等）</td>
+							<td>00:00～00:00</td>
+							<td>24時間表記で統一<br /> 「:」は半角で統一 <br /> AM／PM表記は禁止</td>
+						</tr>
+						<tr>
+							<td>曜日（定休日／営業時間等）</td>
+							<td>○曜日<br /> （水・木曜日） <br /> （月～金曜日） <br /> 祝日</td>
+							<td>「曜日」まで記載<br /> 「～」「・」等はサイトごとに統一 <br /> 「祭日」「祝祭日」はNG。祝日で統一</td>
+						</tr>
+						<tr>
+							<td>括弧</td>
+							<td>（○○）</td>
+							<td>全角表記で統一</td>
+						</tr>
+						<tr>
+							<td>価格表記（税表記）</td>
+							<td>税抜価格／税込価格</td>
+							<td>「税抜き価格」「税込み価格」はNG。税抜価格のみの表示は法的にNGです。<br /> 例：表示価格はすべて税込価格です。</td>
+						</tr>
+						<tr>
+							<td>営業時間</td>
+							<td>診療時間（医療系）<br /> 開校時間／授業時間（スクール系） <br /> など</td>
+							<td>業種に応じて適切な表記を選択し、サイト内で統一</td>
+						</tr>
+						<tr>
+							<td>定休日</td>
+							<td>休診日（医療系）<br /> 休校日／休講日（スクール系） <br /> など</td>
+							<td>業種に応じて適切な表記を選択し、サイト内で統一</td>
+						</tr>
+						<tr>
+							<td>駐車場表記</td>
+							<td>有り（○台）<br /> 無し</td>
+							<td>台数必須</td>
+						</tr>
+						<tr>
+							<td>SNSプラグイン</td>
+							<td>「○○プラグインを設置予定です」</td>
+							<td>後付けでSNSプラグインを挿入する予定で、スペースだけ設ける場合の表記</td>
+						</tr>
+						<tr>
+							<td>案内系ページタイトル</td>
+							<td>会社案内<br /> 店舗案内 <br /> 医院案内</td>
+							<td>いわゆる「/company」ページは「○○案内」で統一<br /> 業種に応じて適切な表記を選択し、サイト内で統一</td>
+						</tr>
+						<tr>
+							<td>準備中表記</td>
+							<td>「○○に関する掲載内容は現在準備中です。」</td>
+							<td>「○○」はページ名<br /> 採用情報等で採用していない場合は「現在採用は行っておりません」等の表記でOK</td>
+						</tr>
+						<tr>
+							<td>道案内表記</td>
+							<td>「○○様の隣になります。」</td>
+							<td>道案内のシンボルとして、他企業を利用する場合は敬称（様、さん）を付ける。<br /> 例）〇〇様の隣、ファミリーマート〇〇店さんを右折など</td>
+						</tr>
+						<tr>
+							<td>商号（会社名）</td>
+							<td>株式会社○○<br /> ○○株式会社</td>
+							<td>株式会社と社名の間に、空白（スペース）を挿入しない<br /> 例）株式会社Kanagawa JAPAN　⇒OK<br /> 例）株式会社カナガワ　ジャパン　⇒NG <br />
+								例）株式会社　カナガワ　⇒NG</td>
+						</tr>
+						<tr>
+							<td>クレジットカード表記</td>
+							<td>Visa・Mastercard・JCB・American Express・Diners Club</td>
+							<td>国際ブランドのみの表記<br>カード情報は発行会社の情報はNG</td>
+						</tr>
+						<tr>
+							<td>QRコード決済・電子マネー</td>
+							<td>交通系電子マネー・楽天ペイ・<br>LINE Pay・Origami Pay・<br>Amazon
+								Pay・d払い・pixiv PAY・<br>PayPay・pring・PAY ID・EPOS Pay・<br>WeChat
+								Pay・アリペイ・iD・<br>QUICPay・nanaco・WAON・楽天Edy</td>
+							<td>ロゴもしくは公式テキスト名称を記載</td>
+						</tr>
+						<tr>
+							<td>Googleストリートビュー</td>
+							<td>Googleストリートビュー公開予定<br>Googleストリートビュー（屋内）公開予定　など</td>
+							<td>古い名称の【インドアビュー】は絶対にNG</td>
+						</tr>
+						<tr>
+							<td>最寄り駅表記</td>
+							<td>「○○線○○駅」</td>
+							<td>
+								駅名だけでなく、路線名も記載<br>
+								<p>Yahoo!駅情報を正とする<br> <a href="https://transit.yahoo.co.jp/station/top" target="_blank" rel="noopener noreferrer">https://transit.yahoo.co.jp/station/top</a></p>
+								<p>▼ やり方<br>①駅名で検索<br>②検索結果の最寄り駅をクリック<br>③検索結果のページで「時刻表」のすぐ下にある路線の名称を記載する</p>
+								ただし、JRだけは広く認知されているためJR線の一つでOK。
+							</td>
+						</tr>
+						<tr>
+							<td>見出しの英字表記</td>
+							<td>MENU<br>menu<br>Menu</td>
+							<td>
+								全て大文字or小文字、頭だけ大文字など、サイト内で統一
+								<p>※下記は英単語を統一</p>
+								「最新情報」News<br>「会社案内」Company<br>「事業内容」Services<br>「求人情報」Recruit
+							</td>
+						</tr>
+						<tr>
+							<td>ホームページアドレス</td>
+							<td>https://www.example.com</td>
+							<td>
+								SSL付きであれば「https」で表記。<br>
+								基本は「www.」をつけるが、既存がついていない場合等は省略可。<br>
+								計上用の仮ドメインで公開する場合は、計上用仮ドメインを掲載。計上後本来のドメインに修正。
+							</td>
+						</tr>
+						<tr>
+							<td>メールアドレス</td>
+							<td>sample@example.com</td>
+							<td>
+								お客さまが受付（使用）しているメールアドレスをHP上に掲載。設定も合わせる。<br>
+								計上用仮ドメインはHPに掲載しない。
+							</td>
+						</tr>
+						<tr>
+							<td>お知らせタイトル</td>
+							<td>
+								[新規公開時]<br>○○のホームページを公開しました。<br>
+								<p>[リプレイス時]<br>○○のホームページをリニューアルしました。</p>
+								[併用]<br>○○のホームページを新しくオープンしました。
+							</td>
+							<td>
+								既存からの移行やリニューアルの場合は、品質依頼時に必ず既存URLを添える。<br>
+								移行やリニューアルの取扱は、同じドメインでの制作に限る。<br>
+								○○には屋号(or法人名)
+							</td>
+						</tr>
+						<tr>
+							<td>最低賃金</td>
+							<td>
+								国で定められた最低賃金以上の金額を記載<br>
+								<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/minimumichiran/" target="_blank" rel="noopener noreferrer">参考：地域別最低賃金の全国一覧</a>
+							</td>
+							<td>
+								遵守していない場合、法令違反として「50万円以下の罰金」が業者に科せられる。<br>
+								最低賃金の変更頻度は高いので、採用情報をいただく際は必ず下回っていないか確認する。
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+</main>
+<%- include('./../tpl/_footer', { pageId }) %>

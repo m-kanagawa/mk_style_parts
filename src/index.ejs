@@ -1,8 +1,9 @@
 <% 
 	let title = 'モジュールリスト'; 
 	let pageId = 'home'; 
+	var path = "./"
 %>
-<%- include('tpl/_header', { title, pageId }) %>
+<%- include('tpl/_header', { title, pageId, path: path }) %>
 <main>
 
 <section class="sec-top01">
@@ -26,6 +27,9 @@
 			<li><a href="./mk-guide.html">ガイド</a></li>
       <li><a href="./mk-btn.html">ボタン</a></li>
       <li><a href="./mk-other.html">その他</a></li>
+    </ul>
+    <ul class="link-list">
+      <li><a href="./page/notation.html">表記ゆれルール</a></li>
     </ul>
   </div>
 </section>

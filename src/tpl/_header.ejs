@@ -1,4 +1,4 @@
-
+<%_ if (typeof path === 'undefined') { var path = ''; }_%>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -9,8 +9,8 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-	<link rel="stylesheet" href="assets/css/common.css" type="text/css" />
-	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="<%= path %>assets/css/common.css" type="text/css" />
+	<link rel="stylesheet" href="<%= path %>assets/css/style.css" type="text/css" />
 </head>
 <body>
 	<header class="header">
@@ -19,14 +19,14 @@
 		</div>
 		<div class="header__nav">
 			<ul>
-				<li><a href="./mk-title.html">title</a></li>
-				<li><a href="./mk-module.html">module01</a></li>
-				<li><a href="./mk-module02.html">module02</a></li>
-				<li><a href="./mk-slider.html">slider</a></li>
-				<li><a href="./mk-post.html">post</a></li>
-				<li><a href="./mk-guide.html">guide</a></li>
-				<li><a href="./mk-btn.html">button</a></li>
-				<li><a href="./mk-other.html">others</a></li>
+				<li><a href="<%= path %>mk-title.html">title</a></li>
+				<li><a href="<%= path %>mk-module.html">module01</a></li>
+				<li><a href="<%= path %>mk-module02.html">module02</a></li>
+				<li><a href="<%= path %>mk-slider.html">slider</a></li>
+				<li><a href="<%= path %>mk-post.html">post</a></li>
+				<li><a href="<%= path %>mk-guide.html">guide</a></li>
+				<li><a href="<%= path %>mk-btn.html">button</a></li>
+				<li><a href="<%= path %>mk-other.html">others</a></li>
 			</ul>
 		</div>
 	</header>
