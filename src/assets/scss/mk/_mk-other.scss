@@ -528,6 +528,71 @@
 	}
 }
 
+.mk-flow02 {
+	padding: min(10vw,100px) 15px;
+	&__inner {
+		max-width: 1000px;
+		margin: auto;
+	}
+	dl {
+		display: flex;
+		gap: 1em;
+		padding: min(4vw,40px) 0;
+		border-top: 1px dashed #444;
+		&:last-child {
+			border-bottom: 1px dashed #444;
+		}
+	}
+	dt {
+		@include clamp_fontsize(30, 576, 1200, 60);
+		font-style: italic;
+		span {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 50px;
+			height: 100%;
+			max-width: 100%;
+			max-height: 100%;
+			background-color: #420000;
+			color: #fff;
+			font-family: var(--ff-serif);
+		}
+	}
+	dd {
+		width: calc(100% - 50px);
+		h3 {
+			@include clamp_fontsize(18, 576, 1200, 24);
+			font-weight: 600;
+		}
+	}
+	@media (min-width: $sm) {
+		dl {
+			align-items: center;
+			gap: 2em;
+		}
+		dt {
+			span {
+				width: 70px;
+				height: 70px;
+			}
+		}
+		dd {
+			width: calc(100% - 70px);
+		}
+	}
+	@media (min-width: $md) {
+		dt {
+			span {
+				width: 120px;
+				height: 120px;
+			}
+		}
+		dd {
+			width: calc(100% - 120px);
+		}
+	}
+}
 
 
 // 円グラフ

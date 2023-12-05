@@ -6,7 +6,12 @@
 	.mk-title05,
 	.mk-title06,
 	.mk-title07,
-	.mk-title08 {
+	.mk-title08,
+	.mk-title10,
+	.mk-title11,
+	.mk-title12,
+	.mk-title13,
+	.mk-title14, {
 		margin-bottom: min(10vw,120px);
 	}
 }
@@ -192,5 +197,28 @@
 		span {
 			width: 100%;
 		}
+	}
+}
+
+
+
+.mk-title09 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 26px;
+	text-align: center;
+	&::before,
+	&::after {
+		content: '';
+		width: 70px;
+		height: 1px;
+		background-color: var(--c-primary);
+	}
+	&::before {
+		margin-right: 20px;
+	}
+	&::after {
+		margin-left: 20px;
 	}
 }
