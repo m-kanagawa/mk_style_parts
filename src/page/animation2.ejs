@@ -1,0 +1,30 @@
+<% 
+let title = 'アニメーション2'; 
+let pageId = 'mk-animation2'; 
+var path = "./../"
+%>
+<%- include('./../tpl/_header', { title, pageId, path: path}) %>
+
+<main>
+
+
+	<h1 class="parts-title">アニメーション2</h1>
+	<div class="inner module-space" style="margin-top: min(30vw,300px);">
+
+		<h3>左から画像表示</h3>
+		<figure class="js-ani cover-slide"><img src="./../assets/img/mv_img001.jpg" class="img-zoom" alt=""></figure>
+
+
+		<h3>左から画像表示、ホバー時に透過して黒の背景、画像ズーム</h3>
+		<a href="#">
+			<figure class="js-ani cover-slide hover-darken hover-img-zoom"><img src="./../assets/img/mv_img001.jpg" class="img-zoom" alt=""></figure>
+		</a>
+
+
+	</div>
+
+	<h3>左から画像表示、ズームアウト</h3>
+	<figure class="js-ani left-mask"><img src="./../assets/img/mv_img001.jpg" alt=""></figure>
+
+</main>
+<%- include('./../tpl/_footer', { title, pageId, path: path}) %>

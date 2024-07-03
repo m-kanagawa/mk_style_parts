@@ -170,7 +170,56 @@
 	}
 }
 
-
+.mk-guide02 {
+	padding: min(10vw,100px) 15px;
+	background-color: #efefef;
+	h3 {
+		margin-bottom: 0.5em;
+		@include clamp_fontsize(22, 576, 992, 28);
+	}
+	&__inner {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		max-width: var(--w-base);
+		margin: auto;
+		gap: 20px;
+		@media (min-width: $md) {
+			flex-direction: row;
+		}
+	}
+	&__img-box,
+	&__text-box {
+		width: 100%;
+		@media (min-width: $md) {
+			width: calc(50% - 10px);
+		}
+	}
+	&__img-box {
+		max-width: 450px;
+		margin: auto;
+		@media (min-width: $md) {
+			max-width: none;
+		}
+	}
+	&__text-box {
+		background-color: #f60;
+		.tel {
+			a {
+				color: var(--c-primary);
+				@include clamp_fontsize(20, 576, 992, 24);
+				font-weight: 600;
+			}
+		}
+	}
+	&__map {
+		flex-basis: 100%;
+		iframe {
+			width: 100%;
+			height: 400px;
+		}
+	}
+}
 
 
 

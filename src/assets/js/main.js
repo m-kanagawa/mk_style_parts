@@ -17,10 +17,17 @@ function cssAnime() {
 
 //テキストを1文字ずつ span で分割
 function cssAnimeSplit() {
-	$('.js-split').children().addBack().contents().each(function() {
-		$(this).replaceWith($(this).text().replace(/(\S)/g, '<span class="char">$&</span>'));
+	jQuery('.js-split').children().addBack().contents().each(function() {
+		if (this.nodeType === 3) { // テキストノードの場合
+			jQuery(this).replaceWith(jQuery(this).text().replace(/(\S)/g, '<span class="char">$&</span>'));
+		}
 	});
 }
+// function cssAnimeSplit() {
+// 	jQuery('.js-split').children().addBack().contents().each(function() {
+// 		jQuery(this).replaceWith(jQuery(this).text().replace(/(\S)/g, '<span class="char">$&</span>'));
+// 	});
+// }
 
 // 画面をスクロールをしたら動かしたい場合の記述
 $(window).scroll(function () {
