@@ -1,3 +1,5 @@
+@use "./../global/" as *;
+
 .mk-btn01,
 .mk-btn02,
 .mk-btn03,
@@ -189,14 +191,14 @@
 			left: 25px;
 			width: 9px;
 			height: 2px;
-			background: #ebd5cd;
+			background: #aaa;
 		}
 		&::after {
 			left: 29px;
 			width: 8px;
 			height: 8px;
-			border-top: 1px solid #ebd5cd;
-			border-right: 1px solid #ebd5cd;
+			border-top: 1px solid #aaa;
+			border-right: 1px solid #aaa;
 			rotate: 45deg;
 		}
 		> svg {
@@ -207,7 +209,7 @@
 				stroke-width: 1;
 				stroke-dasharray: 200;
 				&:first-child {
-					stroke: #ebd5cd;
+					stroke: #aaa;
 					stroke-dashoffset: 0;
 				}
 				&:last-child {
@@ -222,6 +224,7 @@
 			align-items: center;
 			margin-left: 16px;
 			padding: 0 6px 0 0;
+			color: #aaa;
 			font-size: 14px;
 			font-weight: 700;
 			letter-spacing: 1px;
@@ -242,7 +245,10 @@
 				border-right: 1px solid var(--c-primary);
 			}
 			> svg > circle {stroke-dashoffset: 0!important}
-			> span {padding: 0 0 0 6px}
+			> span {
+				padding: 0 0 0 6px;
+				color: var(--c-primary);
+			}
 		}
 	}
 }
@@ -645,6 +651,98 @@
 			&::after {
 				border-top: 2px solid var(--c-primary);
 				border-right: 2px solid var(--c-primary);
+			}
+		}
+	}
+}
+
+.mk-btn12 {
+	a {
+		display: inline-block;
+		position: relative;
+		z-index: 1;
+		padding: 8px 40px;
+		background-image: linear-gradient(0deg, #f4f4f4 50%, #fff 50%);
+		border: 1px solid #000;
+		color: #000 !important;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 1.7;
+		text-decoration: none;
+		transition: all .4s ease;
+		@media ( min-width : $md ) {
+			padding: 8px 60px;
+			font-size: 20px;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: calc(100% - 6px);
+			height: calc(100% - 6px);
+			margin: auto;
+			background: #333;
+			transition: all .4s ease;
+			transform: scale(0);
+			opacity: 0;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 10px;
+			width: 6px;
+			height: 6px;
+			margin: auto;
+			vertical-align: middle;
+			border-color: #000;
+			border-style: solid;
+			border-width: 1px 1px 0 0;
+			transform: rotate(45deg);
+			transition: all .4s ease;
+		}
+		&:hover {
+			color: #fff !important;
+			&::before {
+				transform: scale(1);
+				opacity: 1;
+			}
+			&::after {
+				border-top: 2px solid #fff;
+				border-right: 2px solid #fff;
+			}
+		}
+		@media ( min-width : $md ) {
+			&::after {
+				right: 30px;
+				width: 8px;
+				height: 8px;
+				border-width: 2px 2px 0 0;
+			}
+		}
+	}
+	&.inverse {
+		a {
+			background-image: linear-gradient(0deg, #000 50%, #666 50%);
+			color: #fff !important;
+			&::before {
+				background: #fff;
+			}
+			&::after {
+				border-top: 2px solid #fff;
+				border-right: 2px solid #fff;
+			}
+			&:hover {
+				color: #000 !important;
+				&::after {
+					border-top: 2px solid #000;
+					border-right: 2px solid #000;
+				}
 			}
 		}
 	}

@@ -40,6 +40,50 @@ $(window).on('load', function () {
 	cssAnimeSplit();//テキストを1文字ずつ span で分割
 });// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
 
+//----------------------------------------------------
+// ナビのドロップダウン
+// PCの時はホバーで、SPの時はクリックで開く
+//----------------------------------------------------
+
+if (window.matchMedia('(max-width: 768px)').matches) {
+	//スマホ処理
+	$('.header__nav li').click(function(){
+		$("ul:not(:animated)", this).slideToggle(200);
+	}, function(){
+		$("ul",this).slideToggle(200);
+		$(this).toggleClass('open_menu');
+	});
+} else if (window.matchMedia('(min-width:769px)').matches) {
+	//PC処理
+	$('.header__nav li').hover(function(){
+		$("ul:not(:animated)", this).slideDown(200);
+	}, function(){
+		$("ul",this).slideUp(200);
+	});
+}
+
+
+
+
+//----------------------------------------------------
+// ドロワーメニュー
+//----------------------------------------------------
+    //ドロワーメニュー
+    $('.toggle_nav,.toggle_nav_bg').on('click', function () {
+      $('body').toggleClass('open');
+    });
+    //ドロワーメニューのアコーディオン
+    // $('.header__nav > ul a[href^=#]').click(function(){
+    //   $(this).next('.sub-menu').slideToggle();
+    //   $(this).toggleClass('open_menu');
+    //   return false;//上部にスクロールされる問題を解決
+    // });
+
+
+		//ドロワーメニューの子要素がある親要素にクラスを追加
+		$('.header__nav li > ul').parent().addClass("li-parent");
+
+
 
 
 // Scroll
@@ -67,19 +111,6 @@ $(function ($) {
   });
 });
 
-//fadein
-$(function () {
-  $(window).scroll(function () {
-    $('.fadein').each(function () {
-      var elemPos = $(this).offset().top;
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
-      if (scroll > elemPos - windowHeight + 200) {
-        $(this).addClass('scrollin');
-      }
-    });
-  });
-});
 
 //page top
 $(function(){

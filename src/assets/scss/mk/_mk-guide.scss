@@ -1,3 +1,4 @@
+@use "../global" as *;
 
 .mk-guide01 {
 	padding: min(10vw,80px) 15px;
@@ -170,6 +171,7 @@
 	}
 }
 
+
 .mk-guide02 {
 	padding: min(10vw,100px) 15px;
 	background-color: #efefef;
@@ -276,6 +278,133 @@
 					&::after {
 						border-top: 1px solid #4e1881;
 						border-right: 1px solid #4e1881;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.contact-box02 {
+	padding: min(14vw,80px) 15px;
+	background-color: var(--c-primary);
+	color: #fff;
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		max-width: 1200px;
+		margin: auto;
+		@media (min-width: $lg) {
+			flex-direction: row;
+		}
+	}
+	&__h-box {
+		margin-bottom: 20px;
+		text-align: center;
+		h3 {
+			margin-bottom: 0.1em;
+			@include clamp_fontsize(36, 320, 1200, 60); 
+			font-weight: 500;
+			line-height: 1;
+		}
+		p {@include clamp_fontsize(16, 320, 1200, 20);}
+		@media (min-width: $lg) {
+			margin-bottom: 0;
+			text-align: left;
+		}
+	}
+	&__box {
+		margin-left: auto;
+		margin-right: auto;
+		@media (min-width: $lg) {
+			margin-right: 0;
+		}
+	}
+	.tel-box,
+	.mail-box {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		@include clamp_fontsize(16, 320, 1200, 22);
+		&__text {
+			padding: 0 0;
+			&::before {
+				content: '\f2a0';
+				display: inline-block;
+				margin-right: 10px;
+				color: #fff;
+				font-family: fontAwesome;
+			}
+		}
+		@media (min-width: $md) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+	.tel-box {
+		align-items: center;
+		&__text {
+			&::before {
+				transform: rotate(320deg);
+			}
+		}
+		&__tel {
+			@include clamp_fontsize(30, 320, 1200, 46);
+			line-height: 1;
+			a {
+				color: #fff;
+				font-weight: 500;
+				letter-spacing: 4px;
+			}
+		}
+		@media (min-width: $md) {
+			align-items: flex-end;
+		}
+	}
+	.mail-box {
+		align-items: center;
+		margin-top: 36px;
+		@media (min-width: $md) {
+			margin-top: 26px;
+		}
+		&__text {
+			background-image: url(/wp-content/uploads/icon_mail.png);
+			&::before {
+				content: '\f0e0';
+			}
+		}
+		&__btn {
+			a {
+				display: block;
+				position: relative;
+				padding: 5px 36px 5px 20px;
+				border: 1px solid #fff;
+				border-radius: 5px;
+				color: #fff;
+				@include clamp_fontsize(16, 320, 1200, 20);
+				text-decoration: none;
+				transition: all 0.5s;
+				&::before {
+					content: "";
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					right: 10px;
+					box-sizing: border-box;
+					width: 5px;
+					height: 5px;
+					margin: auto;
+					border: 5px solid transparent;
+					border-left: 5px solid #fff;
+					transition: all 0.5s;
+				}
+				&:hover {
+					background-color: #fff;
+					color: var(--c-primary);
+					&::before {
+						border-left: 5px solid var(--c-primary);
 					}
 				}
 			}

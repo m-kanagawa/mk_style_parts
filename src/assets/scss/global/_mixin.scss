@@ -1,0 +1,65 @@
+@use "sass:math";//Dart Sassで除算を使う際に必要な記述
+// mixin
+// ===================================================================
+
+// フォントサイズ
+// ----------------------------------------------------------
+// このmixinは1remを10pxとして作成しています。
+// 理由はこれまでの実制作でhtmlに62.5%を指定している場合が多かったためで、その資産を流用しやすいようにしました。
+
+// https://blog.looseknot.jp/css/sass-clamp-fontsize.html
+@mixin clamp_fontsize($fs_min, $width_small, $width_large, $fs_max) {
+  $preferred_vw_base: math.div(($fs_max - $fs_min), ($width_large - $width_small));
+  $preferred_vw: ($preferred_vw_base * 100) * 1vw;
+  $preferred_rem: ($width_small * -1 * $preferred_vw_base + $fs_min) * .1rem;
+  font-size: clamp($fs_min * .1rem, $preferred_rem + $preferred_vw, $fs_max * .1rem);
+}
+// @include clamp_fontsize(fs_min, width_small, width_large, fs_max);
+// @include clamp_fontsize(12, 576, 992, 16); :例
+// font-size: clamp(1.2rem, 0.6461538462rem + 0.9615384615vw, 1.6rem);
+// 最小・最大フォントサイズをそれぞれ12・16px、ブラウザの最小・最大幅をそれぞれ576・992pxとしたい場合
+
+
+// くの字矢印
+// ----------------------------------------------------------
+//include arrow(10, 2, #000, right)（※ 左から大きさ、太さ、色、方向）
+// 例
+// &::after {
+// 	position: absolute;
+// 	right: 15px;
+// 	top: 0;
+// 	bottom: 0;
+// 	margin: auto;
+// 	content: "";
+// 	@include arrow(8, 2, #fff, right);
+// }
+@mixin arrow($width, $bold, $color, $deg) {
+	border-color: $color;
+	border-style: solid;
+	border-width: 0 #{$bold}px #{$bold}px 0;
+	height: #{$width}px;
+	vertical-align: middle;
+	width: #{$width}px;
+	//角度
+	@if ($deg == 'left') {transform: rotate(135deg);}
+	@else if ($deg == 'top') {transform: rotate(225deg);}
+	@else if ($deg == 'right') {transform: rotate(-45deg);}
+	@else if ($deg == 'bottom') {transform: rotate(45deg);}
+}
+
+
+// formスタイルリセット
+// ----------------------------------------------------------
+@mixin formReset() {
+	input, button, textarea, select {
+			margin: 0;
+			padding: 0;
+			background: none;
+			border: none;
+			border-radius: 0;
+			outline: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+	}
+}

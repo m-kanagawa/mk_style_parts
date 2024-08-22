@@ -1,23 +1,6 @@
 @charset "utf-8";
-//----------------------------------------------------
-// 各SCSSファイルのインポート
-//----------------------------------------------------
-
-@import "setting";
-@import "parts/plugin"; 
-@import "parts/reset";
-@import "parts/mixin"; 
-@import "parts/common"; 
-
-@import "custom";
-@import "mk/mk-title";
-@import "mk/mk-slider";
-@import "mk/mk-module";
-@import "mk/mk-module02";
-@import "mk/mk-post";
-@import "mk/mk-guide";
-@import "mk/mk-btn";
-@import "mk/mk-other";
-
-@import "animation/mk-animation";
-@import "animation/mk-animation2";
+@use "parts/reset";        // リセットCSS
+@use "parts";
+@use "mk";
+@use "animation";
+@use "custom";
