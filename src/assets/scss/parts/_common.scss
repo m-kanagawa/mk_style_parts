@@ -18,6 +18,17 @@ body {
   font-feature-settings: "palt";
 }
 
+pre {
+	font-size: 14px;
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 5px;
+  background: #25292f;
+  color: #fff;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 //----------------------------------------------------
 // header
 //----------------------------------------------------
@@ -473,4 +484,117 @@ main {
       text-decoration: none;
     }
   }
+}
+
+
+.table-schedule,
+.entry-content .table-schedule {
+	width: 100%;
+	letter-spacing: normal;
+	tbody {
+		th {
+			background: transparent;
+		}
+		tr:last-child {
+			th,td{
+				border-bottom:0;
+			}
+		}
+	}
+  th, td {
+    padding: 0.7em 0.3em;
+    text-align: center;
+		@include clamp_fontsize(13, 320, 768, 16);
+		line-height: 1.2;
+		vertical-align: middle;
+		@media (min-width: 375px) {
+		}
+		@media (min-width: $md) {
+			padding: 0.7em min(1.2vw,10px);
+			@include clamp_fontsize(13, 768, 1600, 16);
+		}
+	}
+	td {
+		font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+	}
+	tr {
+		th {
+			border: 0;
+			border-bottom: 2px dotted var(--c-table-border);
+			font-weight: normal;
+		}
+		&:not(:last-child){
+			td {
+				border: 0;
+				border-bottom: 2px dotted var(--c-table-border);
+			}
+		}
+		th,td{
+			&:not(:last-child){
+				border-right: 2px dotted var(--c-table-border);
+			}
+		}
+	}
+	&.type02 {
+		tbody {
+			tr:last-child {
+				th,td {
+					border-bottom: 1px solid var(--c-table-border);
+				}
+			}
+			th {
+				background-color: rgba(var(--c-primary-rgb),0.8);
+			}
+		}
+		th {
+			background-color: var(--c-table-th-bg);
+			color: #fff;
+		}
+		tr {
+			th {
+				border: 0;
+				border-bottom: 1px solid var(--c-table-border);
+				font-weight: normal;
+			}
+			td {
+				border: 0;
+				border-bottom: 1px solid var(--c-table-border);
+			}
+			th,td{
+				border-right: 1px solid var(--c-table-border);
+			}
+		}
+	}
+	&.type03 {
+		tr {
+			th,td {
+				border: none !important;
+			}
+		}
+		thead {
+			tr:first-child th:first-child {
+				border-radius: 5px 0 0 5px;
+			}
+			tr:first-child th:last-child {
+				border-radius: 0 5px 5px 0;
+			}
+			th {
+				border-bottom: none;
+				background-color: rgba(var(--c-primary-rgb),0.2);
+				color: var(--c-primary);
+				font-weight: 500;
+			}
+		}
+		tbody {
+			td,th {
+				border-bottom: 1px solid var(--c-primary) !important;
+			}
+			th {
+				color: var(--c-text);
+			}
+			td {
+				color: var(--c-primary);
+			}
+		}
+	}
 }

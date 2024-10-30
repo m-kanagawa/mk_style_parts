@@ -126,6 +126,137 @@
 }
 
 
+///* sp */
+@media only screen and (max-width: 768px) {
+	.time {
+		padding: 20px 20px;
+		&__title {display: none;}
+		&__inner {
+			padding-bottom: 20px;
+			border-bottom: 1px solid #eee;
+		}
+		&__box {
+			background-color: #fff;
+		}
+		.table-schedule {
+			margin-bottom: 10px;
+		}
+	}
+}/* sp */
+
+// 診療時間
+@media only screen and (min-width: 769px) {
+
+	.time {
+		width: 600px;
+		right: 0;
+		// .time__inner を右にずらした時、元の表示領域をホバーすると
+		// .time__inner の位置が元に戻ってしまうので、
+		// 見出し部分をホバーした時だけ、元の位置に戻るように下記を指定
+		// ※ .time__inner には pointer-events: auto; を指定する
+		pointer-events: none;
+		// @media (max-width: 768px) {display: none;}
+		// false の時は右下に絶対配置
+		&[data-scroll-position="false"] {
+			@media not all and (min-width: 1180px) {
+				position: fixed;
+				top: 540px;
+				top: 50%;
+				z-index: 10;
+				.time__inner {
+					transform: translateX(530px);
+				}
+			}
+			@media (min-width: 1180px) {
+				position: absolute;
+				top: 440px;
+				top: 640px;
+				z-index: 10;
+				.time__inner {
+					transform: translateX(0);
+					box-shadow: 0px 0px 5px 0px rgba(#0c1532, 0.35);
+				}
+			}
+		}
+		// 閉じている時
+		// true の時は右上に固定 + 中身（.time__inner）だけ右にずらす
+		&[data-scroll-position="true"] {
+			position: fixed;
+			top: 440px;
+			top: 50%;
+			z-index: 10;
+			.time__inner {
+				transform: translateX(530px);
+				box-shadow: 0px 0px 5px 0px rgba(#0c1532, 0.35);
+			}
+			.time__title {
+				cursor: pointer;
+			}
+		}
+		// ホバー時は中身を元の位置に戻す
+		&:hover {
+			.time__inner {
+				transform: translateX(0);
+			}
+		}
+		&__inner {
+			display: flex;
+			// align-items: center;
+			width: 600px;
+			background-color: #fff;
+			transition: transform .5s ease-in-out;
+			transform: translateX(550px);
+			pointer-events: auto;
+		}
+		&__title {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			// margin-right: 25px;
+			margin-right: 0;
+			padding-right: 15px;
+			padding-left: 15px;
+			border-right: 1px solid #eee;
+			background-color: #f6f8ff;
+			span {
+				position: relative;
+				writing-mode: vertical-rl;
+				padding-right: 5px;
+				padding-left: 5px;
+				font-size: 18px;
+				letter-spacing: .1em;
+				text-align: center;
+				line-height: 1;
+				&::before {
+					content: "";
+					display: inline-block;
+					position: relative;
+					background-color: #222;
+					mask-image: url(./../../assets/img/parts/i_calendar.svg);
+					mask-size: contain;
+					mask-position: center;
+					mask-repeat: no-repeat;
+					width: 20px;
+					height: 20px;
+					margin-bottom: 7px;
+				}
+			}
+		}
+		&__box {
+			flex-grow: 1;
+			padding: 20px;
+		}
+		&__text {
+			font-size: 12px;
+		}
+		.table-schedule {
+			margin-bottom: 10px;
+		}
+	}
+
+}/* pc */
+
+
 .mk-tel-box {
 	display: flex;
 	align-items: center;
@@ -270,134 +401,134 @@
 /*----------------------------------------------------
  診療時間
 ----------------------------------------------------*/
-.time {
-	width: 600px;
-	right: 0;
-	// .time__inner を右にずらした時、元の表示領域をホバーすると
-	// .time__inner の位置が元に戻ってしまうので、
-	// 見出し部分をホバーした時だけ、元の位置に戻るように下記を指定
-	// ※ .time__inner には pointer-events: auto; を指定する
-	pointer-events: none;
-	@media (max-width: 768px) {display: none;}
-	// false の時は右下に絶対配置
-	&[data-scroll-position="false"] {
-		@media not all and (min-width: 1400px) {
-			position: fixed;
-			top: 300px;
-			z-index: 10;
-			.time__inner {
-				transform: translateX(530px);
-			}
-		}
-		@media (min-width: 1400px) {
-			position: absolute;
-			top: 460px;
-			z-index: 10;
-			.time__inner {
-				transform: translateX(0);
-			}
-		}
-	}
-	// true の時は右上に固定 + 中身（.time__inner）だけ右にずらす
-	&[data-scroll-position="true"] {
-		position: fixed;
-		top: 500px;
-		z-index: 10;
-		.time__inner {
-			transform: translateX(530px);
-		}
-	}
-	// ホバー時は中身を元の位置に戻す
-	&:hover {
-		.time__inner {
-			transform: translateX(0);
-		}
-	}
-	&__inner {
-		display: flex;
-		align-items: center;
-		width: 600px;
-		height: 250px;
-		padding: 20px;
-		background-color: lighten( #f60, 35% );
-		border-radius: 20px 0 0 20px;
-		transition: transform .5s ease-in-out;
-		transform: translateX(550px);
-		pointer-events: auto;
-	}
-	&__title {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 100%;
-		margin-right: 25px;
-		padding-right: 15px;
-		border-right: 1px solid #eee;
+// .time {
+// 	width: 600px;
+// 	right: 0;
+// 	// .time__inner を右にずらした時、元の表示領域をホバーすると
+// 	// .time__inner の位置が元に戻ってしまうので、
+// 	// 見出し部分をホバーした時だけ、元の位置に戻るように下記を指定
+// 	// ※ .time__inner には pointer-events: auto; を指定する
+// 	pointer-events: none;
+// 	@media (max-width: 768px) {display: none;}
+// 	// false の時は右下に絶対配置
+// 	&[data-scroll-position="false"] {
+// 		@media not all and (min-width: 1400px) {
+// 			position: fixed;
+// 			top: 300px;
+// 			z-index: 10;
+// 			.time__inner {
+// 				transform: translateX(530px);
+// 			}
+// 		}
+// 		@media (min-width: 1400px) {
+// 			position: absolute;
+// 			top: 460px;
+// 			z-index: 10;
+// 			.time__inner {
+// 				transform: translateX(0);
+// 			}
+// 		}
+// 	}
+// 	// true の時は右上に固定 + 中身（.time__inner）だけ右にずらす
+// 	&[data-scroll-position="true"] {
+// 		position: fixed;
+// 		top: 500px;
+// 		z-index: 10;
+// 		.time__inner {
+// 			transform: translateX(530px);
+// 		}
+// 	}
+// 	// ホバー時は中身を元の位置に戻す
+// 	&:hover {
+// 		.time__inner {
+// 			transform: translateX(0);
+// 		}
+// 	}
+// 	&__inner {
+// 		display: flex;
+// 		align-items: center;
+// 		width: 600px;
+// 		height: 250px;
+// 		padding: 20px;
+// 		background-color: lighten( #f60, 35% );
+// 		border-radius: 20px 0 0 20px;
+// 		transition: transform .5s ease-in-out;
+// 		transform: translateX(550px);
+// 		pointer-events: auto;
+// 	}
+// 	&__title {
+// 		display: flex;
+// 		justify-content: center;
+// 		align-items: center;
+// 		height: 100%;
+// 		margin-right: 25px;
+// 		padding-right: 15px;
+// 		border-right: 1px solid #eee;
 
-		span {
-			position: relative;
-			writing-mode: vertical-rl;
-			padding-top: 1.5em;
-			padding-right: 5px;
-			padding-left: 5px;
-			font-size: 18px;
-			color: #f60;
-			letter-spacing: .1em;
-			text-align: center;
-			line-height: 1;
-			background-image: url('../img/time_icon.png');
-			background-repeat: no-repeat;
-			background-position: top center;
-			&::before {
-				margin-bottom: 5px;
-				// font-family: fontAwesome;
-				font-family: "Font Awesome 5 Free";
-				content: '\f073';
-				font-size: 1.8rem;
-				font-weight: 400;
-			}
-		}
-	}
-	&__table {
-		font-size: 15px;
-		thead {
-			tr {
-				th {
-					&:first-child {
-						padding: .5em;
-						letter-spacing: .1em;
-					}
-					&:not(:first-child) {
-						padding: 1em;
-					}
-				}
-				td {
-					padding: .5em;
-				}
-			}
-		}
-		tbody {
-			tr {
-				th {
-					width: 140px;
-					padding: .5em;
-					letter-spacing: .1em;
-				}
-				td {
-					padding: .5em;
-					text-align: center;
-					color: #f60;
-				}
-			}
-		}
-		tr {
-			border-bottom: 1px solid #eee;
-			th {
-				text-align: left;
-			}
-		}
-	}
-}
+// 		span {
+// 			position: relative;
+// 			writing-mode: vertical-rl;
+// 			padding-top: 1.5em;
+// 			padding-right: 5px;
+// 			padding-left: 5px;
+// 			font-size: 18px;
+// 			color: #f60;
+// 			letter-spacing: .1em;
+// 			text-align: center;
+// 			line-height: 1;
+// 			background-image: url('../img/time_icon.png');
+// 			background-repeat: no-repeat;
+// 			background-position: top center;
+// 			&::before {
+// 				margin-bottom: 5px;
+// 				// font-family: fontAwesome;
+// 				font-family: "Font Awesome 5 Free";
+// 				content: '\f073';
+// 				font-size: 1.8rem;
+// 				font-weight: 400;
+// 			}
+// 		}
+// 	}
+// 	&__table {
+// 		font-size: 15px;
+// 		thead {
+// 			tr {
+// 				th {
+// 					&:first-child {
+// 						padding: .5em;
+// 						letter-spacing: .1em;
+// 					}
+// 					&:not(:first-child) {
+// 						padding: 1em;
+// 					}
+// 				}
+// 				td {
+// 					padding: .5em;
+// 				}
+// 			}
+// 		}
+// 		tbody {
+// 			tr {
+// 				th {
+// 					width: 140px;
+// 					padding: .5em;
+// 					letter-spacing: .1em;
+// 				}
+// 				td {
+// 					padding: .5em;
+// 					text-align: center;
+// 					color: #f60;
+// 				}
+// 			}
+// 		}
+// 		tr {
+// 			border-bottom: 1px solid #eee;
+// 			th {
+// 				text-align: left;
+// 			}
+// 		}
+// 	}
+// }
 
 
 .mk-flow01 {

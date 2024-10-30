@@ -65,6 +65,13 @@ $tb_width: 1024px;
 	--w-logo: min(20vw,260px);
 	--w-logo-sp: min(46vw,260px);
 	--w-mv: 1200px;
+	
+	//テーブル
+	--c-table-th: var(--c-white);
+	--c-table-th-bg: var(--c-primary);
+	--c-table-td: var(--c-text);
+	--c-table-td-bg: var(--c-cWhite);
+	--c-table-border: #efefef;
 
   //ブレイクポイント
   --bp-xs: 0;
