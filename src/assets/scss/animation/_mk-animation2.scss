@@ -131,3 +131,23 @@ a {
 		}
 	}
 }
+// 画像マスクアニメーション
+.right-mask {
+	clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  transition: all 1s cubic-bezier(0.5, 1, 0.89, 1);
+	&.js-ani-on {
+		clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 100%);
+		img {
+			animation: zoomOutSection 10s linear 0s normal both;
+		}
+		@keyframes zoomOutSection {
+			0% {
+				transform: scale(1.25);
+			}
+			99.9%,
+			to {
+				transform: scale(1);
+			}
+		}
+	}
+}
