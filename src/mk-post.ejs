@@ -95,5 +95,73 @@
 
 
 
+	<h2 class="parts-title2">mk-post03</h2>
+	<div class="module-space">
+
+
+		<div class="mk-post03">
+			<div class="mk-post03__inner">
+				<figure>
+					<a href="#">
+						<p class="mk-post03__img"><img src="https://picsum.photos/id/49/960/360" alt=""></p>
+						<figcaption>トテキストテキストトテキストテキストトテキストテキストトテキストテキスト</figcaption>
+					</a>
+				</figure>
+				<figure>
+					<a href="#">
+						<p class="mk-post03__img"><img src="https://picsum.photos/id/42/960/360" alt=""></p>
+						<figcaption>トテキストテキスト</figcaption>
+					</a>
+				</figure>
+				<figure>
+					<a href="#">
+						<p class="mk-post03__img"><img src="https://picsum.photos/id/48/960/560" alt=""></p>
+						<figcaption>トテキストテキスト</figcaption>
+					</a>
+				</figure>
+				<figure>
+					<a href="#">
+						<p class="mk-post03__img"><img src="https://placehold.jp/eeeeee/cccccc/580x360.png?text=No%20Image" alt=""></p>
+						<figcaption>トテキストテキスト</figcaption>
+					</a>
+				</figure>
+				<figure>
+					<a href="#">
+						<p class="mk-post03__img"><img src="https://picsum.photos/id/49/960/360" alt=""></p>
+						<figcaption>トテキストテキスト</figcaption>
+					</a>
+				</figure>
+			</div>
+		</div>
+		
+		<div class="note">
+			<p>WordPressのカスタム投稿で使うとき</p>
+			<pre><code>
+&lt;div class="mk-post03">
+	&lt;div class="mk-post03__inner">
+	&lt;?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	&lt;figure>
+		&lt;a href="&lt;?php the_permalink(); ?>">
+		&lt;?php if (has_post_thumbnail()) : ?>
+			&lt;p class="mk-post03__img">&lt;?php the_post_thumbnail(); ?>&lt;/p>
+		&lt;?php else: ?>
+			&lt;p class="mk-post03__img">&lt;img src="https://placehold.jp/eeeeee/cccccc/580x360.png?text=No%20Image" alt="&lt;?php the_title(); ?>">&lt;/p>
+		&lt;?php endif; ?>
+			&lt;figcaption>&lt;?php the_title(); ?>&lt;/figcaption>
+		&lt;/a>
+	&lt;/figure>
+	&lt;?php endwhile; endif; ?>
+	&lt;/div>
+&lt;/div>
+&lt;?php get_template_part("lib/parts/parts-pagination"); ?>
+				</code></pre>
+		</div>
+
+	</div>
+
+
+
+
+
 </main>
 <%- include('tpl/_footer', { pageId }) %>
