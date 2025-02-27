@@ -1,5 +1,88 @@
 @use "../global" as *;
 
+// 特定の子要素を持つ親要素を指定
+.inner:has(.mk-2col-box001) {
+	&::after {
+		background-color: #fff9eb;
+	}
+}
+
+.mk-2col-box001 {
+	display: flex;
+	align-items: center;
+	@media (max-width: $md) {
+		flex-direction: column;
+	}
+	& + * {
+		margin-top: min(5vw,50px);
+	}
+	&__img {
+		width: calc(50% + 120px);//画像を指定幅より+α
+		margin-right: -60px;//画像に被せるテキストの幅
+		img {
+			// ↓高さを固定しない場合は削除
+			height: 460px;
+			object-fit: cover;
+		}
+		@media (max-width: $md) {
+			width: 100%;
+			margin-right: 0;
+			img {
+				height: auto;
+				object-fit: contain;
+			}
+		}
+	}
+	&__text-box {
+		position: relative;
+		z-index: 1;
+		width: 50%;
+		padding: min(5vw,50px);
+		background-color: #fff;
+		@media (max-width: $md) {
+			width: 100%;
+		}
+	}
+	&__title {
+		@include clamp_fontsize(20, 320, 1920, 30);
+		margin-bottom: 0.3em;
+	}
+	&__text {
+		line-height: 2;
+	}
+	.more {
+		margin-top: 20px;
+		text-align: right;
+	}
+	&.reverse {
+		flex-direction: row-reverse;
+		@media (max-width: $md) {
+			flex-direction: column;
+		}
+		.mk-2col-box001 {
+			&__img {
+				width: 50%;
+				width: calc(50% + 120px);
+				margin-right: 0;
+				margin-left: -60px;
+				@media (max-width: $md) {
+					width: 100%;
+					margin-left: 0;
+				}
+			}
+		}
+		.more {
+			text-align: left;
+			@media (max-width: $md) {
+				text-align: right;
+			}
+		}
+	}
+}
+
+
+
+
 .mk-imgBox01 {
 	padding: 30px 15px 30px;
 	background: var(--c-secondary);
