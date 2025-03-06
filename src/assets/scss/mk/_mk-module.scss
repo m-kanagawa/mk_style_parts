@@ -81,6 +81,97 @@
 }
 
 
+//中心からずらす
+$mk-2col-box002: -5vw;
+
+.mk-2col-box002 {
+	& + .mk-2col-box002 {
+		padding-top: min(10vw,100px);
+	}
+	&__inner {
+		position: relative;
+		display: flex;
+		flex-direction: row-reverse;
+		max-width: 1200px;
+		margin: auto;
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: calc(50% - $mk-2col-box002);
+			height: 100%;
+			margin-right: calc(50% - 50vw);
+			background-color: #fff;
+		}
+		@media (max-width: $md) {
+			flex-direction: column;
+			&::before {
+				width: 100%;
+				margin-right: 0;
+			}
+		}
+	}
+	&__box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		z-index: 1;
+		width: calc(50% + $mk-2col-box002);
+		min-height: 400px;
+		padding: min(6vw,100px);
+		@media (max-width: $md) {
+			width: 100%;
+			padding: min(6vw,100px) clamp(20px, 6vw, 70px);
+		}
+	}
+	&.reverse {
+		.mk-2col-box002__inner {
+			flex-direction: row;
+			&::before {
+				right: auto;
+				left: 0;
+				margin-right: 0;
+				margin-left: calc(50% - 50vw);
+			}
+			@media (max-width: $md) {
+				&::before {
+					width: 100%;
+					margin-left: 0;
+				}
+			}
+		}
+		.mk-2col-box002__img {
+			right: 0;
+			left: auto;
+			margin-right: calc(50% - 50vw);
+			margin-left: 0;
+		}
+	}
+	&__img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: calc(50vw - $mk-2col-box002);
+		height: 100%;
+		margin-left: calc(50% - 50vw);
+		margin-bottom: 0;
+		img {
+			height: 100%;
+			object-fit: cover;
+		}
+		@media (max-width: $md) {
+			position: static;
+			width: 100%;
+			height: 100%;
+			margin-left: 0;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+
 
 
 .mk-imgBox01 {
